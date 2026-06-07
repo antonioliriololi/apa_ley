@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Referencias - Normas Legales APA 7</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#185FA5;--accent-hover:#0C447C;--accent-light:#E6F1FB;--accent-text:#0C447C;
+  --bg:#F8F7F4;--surface:#FFFFFF;--surface2:#F1EFE8;
+  --border:rgba(0,0,0,0.12);--border-md:rgba(0,0,0,0.22);
+  --text:#1A1A18;--text-muted:#5F5E5A;--text-hint:#888780;
+  --success:#0F6E56;--danger:#A32D2D;
+  --radius:10px;--radius-sm:6px;--radius-pill:24px;
+  --shadow:0 1px 4px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.06)
+}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:0 0 4rem}
+.topbar{background:var(--accent);padding:1rem 2rem;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.topbar h1{font-size:16px;font-weight:600;color:#fff}
+.topbar p{font-size:12px;color:rgba(255,255,255,.75);margin-top:1px}
+.topbar-badge{margin-left:auto;background:rgba(255,255,255,.2);color:#fff;font-size:11px;padding:4px 10px;border-radius:var(--radius-pill);border:1px solid rgba(255,255,255,.35);font-weight:500;white-space:nowrap}
+.main-tab-bar{background:var(--surface);border-bottom:1px solid var(--border);display:flex;position:sticky;top:61px;z-index:90}
+.main-tab{padding:12px 24px;font-size:13px;font-weight:500;border:none;background:none;color:var(--text-muted);cursor:pointer;border-bottom:3px solid transparent;transition:all .18s;white-space:nowrap}
+.main-tab:hover{color:var(--accent)}
+.main-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.container{max-width:880px;margin:0 auto;padding:2rem 1.5rem}
+.grupo-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:8px;overflow:hidden}
+.grupo-header{padding:10px 16px 0;border-bottom:1px solid var(--border)}
+.grupo-titulo{font-size:12px;font-weight:700;color:var(--text-muted);padding-bottom:8px}
+.tipo-tabs{display:flex;flex-wrap:wrap}
+.tipo-btn{font-size:12.5px;font-weight:500;padding:9px 16px;border:none;border-bottom:3px solid transparent;background:none;color:var(--text-muted);cursor:pointer;transition:all .15s;white-space:nowrap;margin-bottom:-1px}
+.tipo-btn:hover{color:var(--accent);background:var(--accent-light)}
+.tipo-btn.active{color:var(--accent);border-bottom-color:var(--accent);background:var(--surface);font-weight:600}
+.card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);padding:1.5rem 1.75rem;margin-bottom:1.25rem}
+.card-title{font-size:13px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;flex-shrink:0}
+.hint-box{background:var(--accent-light);border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:12.5px;color:var(--accent-text);line-height:1.7;margin-bottom:1.25rem}
+.hint-box strong{font-weight:600}
+.hint-box em{font-style:italic}
+.hint-box code{font-family:monospace;background:rgba(24,95,165,.1);padding:1px 5px;border-radius:3px;font-size:11.5px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group label{font-size:11.5px;color:var(--text-muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:4px}
+.req{color:var(--danger);font-size:13px;line-height:1}
+.form-group input,.form-group select,.form-group textarea{font-size:13.5px;padding:9px 12px;border-radius:var(--radius-sm);border:1px solid var(--border-md);background:var(--bg);color:var(--text);transition:border-color .15s,box-shadow .15s;width:100%;font-family:inherit}
+.form-group textarea{resize:vertical;min-height:68px;line-height:1.5}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-hint);font-style:italic;font-size:12.5px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(24,95,165,.12);background:#fff}
+.ejemplo-row{display:flex;align-items:center;gap:8px;margin-top:5px}
+.btn-ejemplo{font-size:11px;padding:4px 11px;border-radius:var(--radius-pill);border:1px dashed var(--accent);background:var(--accent-light);color:var(--accent-text);cursor:pointer;font-weight:500;transition:all .15s;white-space:nowrap}
+.btn-ejemplo:hover{background:#B5D4F4}
+.ejemplo-text{font-size:11.5px;color:var(--text-hint);font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:380px}
+.date-wrapper{position:relative}
+.date-input-row{display:flex;gap:6px;align-items:center}
+.date-input-row input{flex:1}
+.btn-cal{padding:9px 10px;border-radius:var(--radius-sm);border:1px solid var(--border-md);background:var(--bg);cursor:pointer;color:var(--text-muted);font-size:16px;transition:all .15s;line-height:1}
+.btn-cal:hover{background:var(--accent-light);color:var(--accent);border-color:var(--accent)}
+.cal-popup{display:none;position:absolute;top:calc(100% + 6px);left:0;z-index:200;background:var(--surface);border:1px solid var(--border-md);border-radius:var(--radius);box-shadow:0 8px 24px rgba(0,0,0,0.13);padding:12px;min-width:260px}
+.cal-popup.open{display:block}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-header span{font-size:13px;font-weight:600;color:var(--text)}
+.cal-nav{background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-muted);padding:2px 6px;border-radius:4px}
+.cal-nav:hover{background:var(--surface2)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.cal-dh{font-size:10px;font-weight:600;color:var(--text-hint);text-align:center;padding:3px 0;text-transform:uppercase}
+.cal-d{font-size:12px;padding:5px 2px;text-align:center;border-radius:4px;cursor:pointer;color:var(--text);border:none;background:none;transition:background .1s}
+.cal-d:hover{background:var(--accent-light);color:var(--accent)}
+.cal-d.today{font-weight:700;color:var(--accent)}
+.cal-d.other{color:var(--text-hint);pointer-events:none}
+.cal-d.selected{background:var(--accent);color:#fff}
+.preview-chip{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:var(--radius-pill);background:var(--surface2);color:var(--text-muted);margin-bottom:10px}
+.ref-text{font-size:14px;line-height:1.9;color:var(--text);font-family:'Georgia','Times New Roman',serif;padding:14px 16px;background:var(--bg);border-radius:var(--radius-sm);border:1px solid var(--border);min-height:54px;word-break:break-word}
+.ref-text em{font-style:italic}
+.ref-text .url{color:var(--accent);text-decoration:underline}
+.ref-placeholder{color:var(--text-hint);font-style:italic;font-size:13px}
+.cita-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:1rem}
+@media(max-width:560px){.cita-grid{grid-template-columns:1fr}}
+.cita-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px}
+.cita-chip{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:var(--radius-pill);background:var(--surface2);color:var(--text-muted);margin-bottom:8px}
+.cita-text{font-size:13px;line-height:1.75;color:var(--text);font-family:'Georgia','Times New Roman',serif}
+.ris-block{font-family:'Consolas','Courier New',monospace;font-size:12.5px;background:#1A1A18;color:#D3D1C7;border-radius:var(--radius-sm);padding:16px 18px;line-height:2;white-space:pre;overflow-x:auto}
+.ris-tag{color:#FAC775;font-weight:700}
+.ris-sep{color:#888780}
+.ris-val{color:#E1F5EE}
+.ris-er{color:#F0997B;font-weight:700}
+.ris-kw{color:#9FE1CB}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.25rem;align-items:center}
+.btn{font-size:13px;font-weight:500;padding:10px 20px;border-radius:var(--radius-sm);border:1px solid var(--border-md);cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:all .16s;text-decoration:none;font-family:inherit}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-secondary{background:var(--surface);color:var(--text)}
+.btn-secondary:hover{background:var(--surface2)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.toast{font-size:12.5px;color:var(--success);font-weight:500;display:none;align-items:center;gap:5px}
+.toast.show{display:inline-flex}
+.nf-container{max-width:880px;margin:0 auto;padding:2rem 1.5rem}
+.nf-intro{font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:1.5rem}
+.nf-grupo-label{font-size:11px;font-weight:700;color:var(--text-hint);letter-spacing:.08em;text-transform:uppercase;margin:1.5rem 0 8px;padding-left:2px}
+.nf-section{margin-bottom:8px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+.nf-section-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;user-select:none;transition:background .15s}
+.nf-section-header:hover{background:var(--surface2)}
+.nf-section-left{display:flex;align-items:center;gap:10px}
+.nf-section-icon{font-size:18px}
+.nf-section-title{font-size:14px;font-weight:600;color:var(--text)}
+.nf-section-count{font-size:11px;color:var(--text-hint);margin-top:1px}
+.nf-chevron{font-size:18px;color:var(--text-hint);transition:transform .22s;display:inline-block}
+.nf-section.open .nf-chevron{transform:rotate(180deg)}
+.nf-list{display:none;border-top:1px solid var(--border)}
+.nf-section.open .nf-list{display:block}
+.nf-item{display:flex;align-items:flex-start;gap:14px;padding:12px 18px;border-bottom:1px solid var(--border);transition:background .12s}
+.nf-item:last-child{border-bottom:none}
+.nf-item:hover{background:var(--surface2)}
+.nf-item-num{min-width:24px;height:24px;border-radius:50%;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;flex-shrink:0}
+.nf-item-body{flex:1}
+.nf-item-ref{font-size:13px;line-height:1.7;color:var(--text);font-family:'Georgia','Times New Roman',serif}
+.nf-item-ref em{font-style:italic}
+.nf-item-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
+.nf-tag{font-size:10px;padding:2px 8px;border-radius:var(--radius-pill);font-weight:600}
+.nf-tag-area{background:#E1F5EE;color:#0F6E56}
+.nf-tag-year{background:var(--surface2);color:var(--text-muted)}
+.btn-usar{font-size:11px;padding:5px 12px;border-radius:var(--radius-pill);border:1px solid var(--accent);background:var(--accent-light);color:var(--accent);cursor:pointer;font-weight:600;transition:all .15s;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.btn-usar:hover{background:var(--accent);color:#fff}
+.footer{text-align:center;font-size:11.5px;color:var(--text-hint);margin-top:3rem;line-height:1.8}
+.footer a{color:var(--accent);text-decoration:none}
+@media(max-width:640px){.topbar{padding:.75rem 1rem}.topbar-badge{display:none}.container,.nf-container{padding:1.25rem 1rem}.card{padding:1.25rem 1rem}.main-tab{padding:10px 12px;font-size:12px}.tipo-btn{padding:8px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span style="font-size:22px">&#128196;</span>
+  <div><h1>Generador de Referencias &mdash; Normas Legales</h1><p>Formato APA 7.&#170; edici&#243;n &middot; Exportaci&#243;n .ris (Zotero / Mendeley / EndNote)</p></div>
+  <span class="topbar-badge">APA 7 &middot; RIS</span>
+</div>
+<div class="main-tab-bar">
+  <button class="main-tab active" data-panel="generador">&#9997;&#65039; Generador de referencias</button>
+  <button class="main-tab" data-panel="normas">&#128203; Normas m&#225;s citadas en tesis</button>
+</div>
+
+<div class="tab-panel active" id="panel-generador">
+<div class="container">
+  <div style="margin-bottom:1.5rem">
+    <div class="grupo-block">
+      <div class="grupo-header">
+        <div class="grupo-titulo">&#128220; Normas legales</div>
+        <div class="tipo-tabs">
+          <button class="tipo-btn active" data-tipo="constitucion">Constituci&#243;n</button>
+          <button class="tipo-btn" data-tipo="ley">Ley</button>
+          <button class="tipo-btn" data-tipo="decreto_legislativo">Decreto legislativo</button>
+          <button class="tipo-btn" data-tipo="decreto_supremo">Decreto supremo</button>
+          <button class="tipo-btn" data-tipo="codigo_civil">C&#243;digo civil</button>
+          <button class="tipo-btn" data-tipo="codigo_penal">C&#243;digo penal</button>
+        </div>
+      </div>
+    </div>
+    <div class="grupo-block">
+      <div class="grupo-header">
+        <div class="grupo-titulo">&#128209; Resoluciones</div>
+        <div class="tipo-tabs">
+          <button class="tipo-btn" data-tipo="resolucion_ministerial">Resoluci&#243;n Ministerial</button>
+          <button class="tipo-btn" data-tipo="resolucion_legislativa">Resoluci&#243;n Legislativa</button>
+          <button class="tipo-btn" data-tipo="resolucion_tribunal_fiscal">Resoluci&#243;n del Tribunal Fiscal</button>
+          <button class="tipo-btn" data-tipo="resolucion_directoral">Resoluci&#243;n Directoral</button>
+        </div>
+      </div>
+    </div>
+    <div class="grupo-block">
+      <div class="grupo-header">
+        <div class="grupo-titulo">&#127970; Acuerdos y Ordenanzas Municipales</div>
+        <div class="tipo-tabs">
+          <button class="tipo-btn" data-tipo="acuerdo_municipal">Acuerdos</button>
+          <button class="tipo-btn" data-tipo="ordenanza_municipal">Ordenanzas</button>
+          <button class="tipo-btn" data-tipo="norma_tecnica">Norma t&#233;cnica</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hint-box" id="hintBox"></div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot"></span> Datos de la norma &nbsp;<span style="font-size:11px;color:var(--text-hint);font-weight:400">Campos con <span style="color:var(--danger)">*</span> son obligatorios</span></div>
+    <div class="form-grid">
+      <div class="form-group" style="grid-column:1/-1">
+        <label>Entidad que emite la norma <span class="req">*</span></label>
+        <input type="text" id="entidad" autocomplete="off"/>
+        <div class="ejemplo-row" id="ejEntidad"><button class="btn-ejemplo" onclick="usarEjemplo('entidad')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejEntidadTxt"></span></div>
+      </div>
+      <div class="form-group">
+        <label>A&#241;o de publicaci&#243;n <span class="req">*</span></label>
+        <input type="text" id="anio" maxlength="4" autocomplete="off"/>
+        <div class="ejemplo-row" id="ejAnio" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('anio')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejAnioTxt"></span></div>
+      </div>
+      <div class="form-group" id="grpNumero">
+        <label>N&#250;mero de la norma <span class="req">*</span></label>
+        <input type="text" id="numero" autocomplete="off"/>
+      </div>
+      <div class="form-group" style="grid-column:1/-1">
+        <label>T&#237;tulo de la norma <span class="req">*</span></label>
+        <input type="text" id="titulo" autocomplete="off"/>
+        <div class="ejemplo-row" id="ejTitulo" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('titulo')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejTituloTxt"></span></div>
+      </div>
+      <div class="form-group" style="grid-column:1/-1;display:none" id="grpArticulo">
+        <label>Art&#237;culo(s) citado(s)</label>
+        <textarea id="articulo" placeholder="ej. Art&#237;culo 1, Art&#237;culo 2 inciso 1, Art&#237;culo 44"></textarea>
+        <span style="font-size:11px;color:var(--text-hint);margin-top:3px">Se mostrar&#225; en las citas narrativa y parent&#233;tica.</span>
+      </div>
+      <div class="form-group" id="grpFecha">
+        <label>Fecha completa de publicaci&#243;n</label>
+        <div class="date-wrapper">
+          <div class="date-input-row">
+            <input type="text" id="fechaPublicacion" autocomplete="off"/>
+            <button class="btn-cal" id="btnCal" title="Abrir calendario">&#128197;</button>
+          </div>
+          <div class="cal-popup" id="calPopup">
+            <div class="cal-header"><button class="cal-nav" id="calPrev">&#8249;</button><span id="calMonthLabel"></span><button class="cal-nav" id="calNext">&#8250;</button></div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+        </div>
+        <div class="ejemplo-row" id="ejFecha" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('fechaPublicacion')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejFechaTxt"></span></div>
+      </div>
+      <div class="form-group">
+        <label>URL (SPIJ u otra fuente)</label>
+        <input type="text" id="url" autocomplete="off"/>
+        <div class="ejemplo-row" id="ejUrl" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('url')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejUrlTxt"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#0F6E56"></span> Referencia APA 7.&#170; edici&#243;n</div>
+    <span class="preview-chip">Referencia completa</span>
+    <div class="ref-text" id="refCompleta"><span class="ref-placeholder">Completa los campos para ver la referencia generada&#8230;</span></div>
+    <div class="cita-grid">
+      <div class="cita-card"><span class="cita-chip">Cita narrativa</span><div class="cita-text" id="citaNarrativa">&#8212;</div></div>
+      <div class="cita-card"><span class="cita-chip">Cita parent&#233;tica</span><div class="cita-text" id="citaParentetica">&#8212;</div></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" id="btnCopyAPA"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar referencia APA</button>
+      <span class="toast" id="toastAPA"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--success)"><polyline points="20 6 9 17 4 12"/></svg> &#161;Copiado!</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#BA7517"></span> Vista previa &mdash; Formato RIS</div>
+    <div class="ris-block" id="risPreview"></div>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="btnDownloadRIS"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Descargar archivo .ris</button>
+      <button class="btn btn-secondary" id="btnCopyRIS"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar RIS</button>
+      <span class="toast" id="toastRIS"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--success)"><polyline points="20 6 9 17 4 12"/></svg> &#161;Copiado!</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#888780"></span> Etiquetas RIS utilizadas</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+      <thead><tr style="background:var(--bg)">
+        <th style="text-align:left;padding:8px 10px;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border);width:80px">Etiqueta</th>
+        <th style="text-align:left;padding:8px 10px;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border)">Significado</th>
+        <th style="text-align:left;padding:8px 10px;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border)">Valor asignado</th>
+      </tr></thead>
+      <tbody id="risTable"></tbody>
+    </table>
+  </div>
+  <div class="footer">Generado seg&#250;n la <strong>7.&#170; edici&#243;n del Manual de Estilo APA</strong> &middot; Idea de <strong>Antonio Lirio</strong><br>Compatible con Mendeley, Zotero, Endnote y EndNote</div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-normas">
+<div class="nf-container">
+  <p class="nf-intro">Lista de normas legales peruanas m&#225;s citadas en investigaciones y tesis. Haz clic en una categor&#237;a para desplegar. Usa <strong>Usar en generador &#8599;</strong> para cargar los datos autom&#225;ticamente.</p>
+  <div id="nfAccordion"></div>
+  <div class="footer">Generado seg&#250;n la <strong>7.&#170; edici&#243;n del Manual de Estilo APA</strong> &middot; Idea de <strong>Antonio Lirio</strong><br>Compatible con Mendeley, Zotero, Endnote y EndNote</div>
+</div>
+</div>
+
+<script>
+const TIPOS={
+  constitucion:{label:'Constitucion',tieneNumero:false,risType:'STAT',
+    ejCampos:{entidad:true,anio:true,titulo:true,fecha:true,url:true},
+    hintHTML:'<strong>Constituci\u00f3n:</strong> <code>Entidad. (A\u00f1o). <em>T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code><br>Ej.: <em>Congreso Constituyente Democr\u00e1tico. (1993). Constituci\u00f3n Pol\u00edtica del Per\u00fa de 1993. Diario Oficial El Peruano del 29 de diciembre de 1993.</em>',
+    ph:{entidad:'Congreso Constituyente Democr\u00e1tico',anio:'1993',titulo:'Constituci\u00f3n Pol\u00edtica del Per\u00fa de 1993',fecha:'29 de diciembre de 1993',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H682678',numero:''}},
+  ley:{label:'Ley',tieneNumero:true,risType:'STAT',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Ley:</strong> <code>Entidad. (A\u00f1o). <em>Ley N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2014',numero:'30220',titulo:'Ley Universitaria',fecha:'9 de julio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1105565'}},
+  decreto_legislativo:{label:'Decreto Legislativo',tieneNumero:true,risType:'GOVDOC',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Decreto Legislativo:</strong> <code>Entidad. (A\u00f1o). <em>Decreto Legislativo N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2018',numero:'1407',titulo:'Decreto Legislativo que fortalece el Servicio de Defensa P\u00fablica',fecha:'12 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1215995'}},
+  decreto_supremo:{label:'Decreto Supremo',tieneNumero:true,risType:'GOVDOC',
+    ejCampos:{},
+    hintHTML:'<strong>Decreto Supremo:</strong> <code>Entidad. (A\u00f1o). <em>Decreto Supremo N.\u00b0 N\u00famero-A\u00f1o-SECTOR. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'ej. Ministerio de Educaci\u00f3n del Per\u00fa',anio:'',numero:'ej. 012-2021-MINEDU',titulo:'ej. T\u00edtulo del decreto supremo',fecha:'',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  codigo_civil:{label:'C\u00f3digo Civil',tieneNumero:false,risType:'STAT',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>C\u00f3digo Civil:</strong> <code>Entidad. (A\u00f1o). <em>C\u00f3digo Civil.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Poder Legislativo del Per\u00fa',anio:'1984',titulo:'C\u00f3digo Civil',fecha:'25 de julio de 1984',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H82408',numero:''}},
+  codigo_penal:{label:'C\u00f3digo Penal',tieneNumero:false,risType:'STAT',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>C\u00f3digo Penal:</strong> <code>Entidad. (A\u00f1o). <em>C\u00f3digo Penal.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Poder Ejecutivo del Per\u00fa',anio:'1991',titulo:'C\u00f3digo Penal',fecha:'8 de abril de 1991',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H140133',numero:''}},
+  resolucion_ministerial:{label:'Resoluci\u00f3n Ministerial',tieneNumero:true,risType:'GOVDOC',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Resoluci\u00f3n Ministerial:</strong> <code>Entidad. (A\u00f1o). <em>Resoluci\u00f3n Ministerial N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2020',numero:'093-2020-MINEDU',titulo:'Orientaciones para la continuidad del servicio educativo en el marco de la emergencia sanitaria',fecha:'30 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  resolucion_legislativa:{label:'Resoluci\u00f3n Legislativa',tieneNumero:true,risType:'GOVDOC',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Resoluci\u00f3n Legislativa:</strong> <code>Entidad. (A\u00f1o). <em>Resoluci\u00f3n Legislativa N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'31001',titulo:'ej. Resoluci\u00f3n Legislativa que aprueba...',fecha:'ej. 10 de noviembre de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  resolucion_tribunal_fiscal:{label:'Resoluci\u00f3n del Tribunal Fiscal',tieneNumero:true,risType:'CASE',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Resoluci\u00f3n del Tribunal Fiscal:</strong> <code>Tribunal Fiscal del Per\u00fa. (A\u00f1o). <em>Resoluci\u00f3n del Tribunal Fiscal N.\u00b0 N\u00famero.</em> fecha. URL</code><br>No se publica en El Peruano; se cita la fecha de emisi\u00f3n.',
+    ph:{entidad:'Tribunal Fiscal del Per\u00fa',anio:'2022',numero:'03205-5-2022',titulo:'Resoluci\u00f3n del Tribunal Fiscal sobre deducci\u00f3n de gastos por servicios de asistencia t\u00e9cnica',fecha:'ej. 15 de abril de 2022',url:'https://www.mef.gob.pe/tribunal_fiscal/'}},
+  resolucion_directoral:{label:'Resoluci\u00f3n Directoral',tieneNumero:true,risType:'GOVDOC',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Resoluci\u00f3n Directoral:</strong> <code>Entidad. (A\u00f1o). <em>Resoluci\u00f3n Directoral N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2020',numero:'00340-2020-MINEDU',titulo:'Norma que regula el proceso de evaluaci\u00f3n de los aprendizajes de los estudiantes de EBR',fecha:'3 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  acuerdo_municipal:{label:'Acuerdo Municipal',tieneNumero:true,risType:'GOVDOC',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Acuerdo Municipal:</strong> <code>Municipalidad. (A\u00f1o). <em>Acuerdo Municipal N.\u00b0 N\u00famero. T\u00edtulo.</em> fecha. URL</code>',
+    ph:{entidad:'Municipalidad Provincial de Huaraz',anio:'2023',numero:'012-2023-MPH/CM',titulo:'Acuerdo que aprueba el Plan de Desarrollo Concertado del distrito',fecha:'ej. 20 de marzo de 2023',url:'https://www.munihuaraz.gob.pe/'}},
+  ordenanza_municipal:{label:'Ordenanza Municipal',tieneNumero:true,risType:'GOVDOC',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Ordenanza Municipal:</strong> <code>Municipalidad. (A\u00f1o). <em>Ordenanza Municipal N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Municipalidad Metropolitana de Lima',anio:'2022',numero:'2281-MML',titulo:'Ordenanza que regula el uso de espacios p\u00fablicos en el centro hist\u00f3rico de Lima',fecha:'ej. 5 de julio de 2022',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  norma_tecnica:{label:'Norma T\u00e9cnica',tieneNumero:true,risType:'STAND',
+    ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
+    hintHTML:'<strong>Norma T\u00e9cnica Peruana (NTP):</strong> <code>Entidad. (A\u00f1o). <em>C\u00f3digo NTP. T\u00edtulo.</em> URL</code><br>Emitidas por INACAL u otra entidad normalizadora.',
+    ph:{entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 9001:2015',titulo:'Sistemas de gesti\u00f3n de la calidad. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/'}},
+};
+
+const RIS_META={TY:'Tipo de referencia',AU:'Autor / Entidad emisora',PY:'A\u00f1o de publicaci\u00f3n',TI:'T\u00edtulo de la norma',PB:'Editor / Publicado en',CY:'Lugar de publicaci\u00f3n',DA:'Fecha completa',LA:'Idioma',UR:'URL de acceso',KW:'Palabra clave',ER:'Fin del registro'};
+
+const NORMAS_FRECUENTES=[
+  {grupo:'\u{1F4DC} Normas legales',icono:'\u{1F4DC}',seccion:'Leyes',tipo:'ley',normas:[
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2014',numero:'30220',titulo:'Ley Universitaria',fecha:'9 de julio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1105565',area:'Educaci\u00f3n superior'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2002',numero:'27806',titulo:'Ley de Transparencia y Acceso a la Informaci\u00f3n P\u00fablica',fecha:'3 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H95394',area:'Gesti\u00f3n p\u00fablica'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2013',numero:'30057',titulo:'Ley del Servicio Civil',fecha:'4 de julio de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1074568',area:'Recursos humanos'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'1997',numero:'26842',titulo:'Ley General de Salud',fecha:'20 de julio de 1997',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1843',area:'Salud'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2003',numero:'28044',titulo:'Ley General de Educaci\u00f3n',fecha:'29 de julio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H100208',area:'Educaci\u00f3n'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2001',numero:'27444',titulo:'Ley del Procedimiento Administrativo General',fecha:'11 de abril de 2001',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H72678',area:'Administraci\u00f3n p\u00fablica'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2004',numero:'28175',titulo:'Ley Marco del Empleo P\u00fablico',fecha:'19 de febrero de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Recursos humanos'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2011',numero:'29733',titulo:'Ley de Protecci\u00f3n de Datos Personales',fecha:'3 de julio de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H963840',area:'TI / Privacidad'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2011',numero:'29783',titulo:'Ley de Seguridad y Salud en el Trabajo',fecha:'20 de agosto de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Seguridad laboral'},
+    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2000',numero:'27337',titulo:'C\u00f3digo de los Ni\u00f1os y Adolescentes',fecha:'7 de agosto de 2000',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Derecho familiar'},
+  ]},
+  {grupo:'\u{1F4DC} Normas legales',icono:'\u{1F3DB}\uFE0F',seccion:'Decretos supremos',tipo:'decreto_supremo',normas:[
+    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2014',numero:'011-2014-MINEDU',titulo:'Reglamento de la Ley Universitaria N.\u00b0 30220',fecha:'11 de diciembre de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n superior'},
+    {entidad:'Ministerio de Trabajo y Promoci\u00f3n del Empleo del Per\u00fa',anio:'2005',numero:'009-2005-TR',titulo:'Reglamento de Seguridad y Salud en el Trabajo',fecha:'29 de septiembre de 2005',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Seguridad laboral'},
+    {entidad:'Presidencia del Consejo de Ministros del Per\u00fa',anio:'2003',numero:'043-2003-PCM',titulo:'Reglamento de la Ley de Transparencia y Acceso a la Informaci\u00f3n P\u00fablica',fecha:'22 de junio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Gesti\u00f3n p\u00fablica'},
+    {entidad:'Ministerio de Econom\u00eda y Finanzas del Per\u00fa',anio:'2012',numero:'304-2012-EF',titulo:'Reglamento de la Ley del Sistema Nacional de Presupuesto P\u00fablico',fecha:'21 de diciembre de 2012',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
+    {entidad:'Ministerio del Ambiente del Per\u00fa',anio:'2017',numero:'007-2017-MINAM',titulo:'Reglamento de gesti\u00f3n de residuos s\u00f3lidos de aparatos el\u00e9ctricos y electr\u00f3nicos',fecha:'26 de junio de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Medio ambiente'},
+    {entidad:'Presidencia del Consejo de Ministros del Per\u00fa',anio:'2018',numero:'029-2018-PCM',titulo:'Reglamento del Decreto Legislativo N.\u00b0 1310 \u2014 simplificaci\u00f3n administrativa',fecha:'20 de marzo de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Administraci\u00f3n p\u00fablica'},
+    {entidad:'Ministerio de Salud del Per\u00fa',anio:'2020',numero:'008-2020-SA',titulo:'Plan de Salud Mental Per\u00fa 2020\u20132021',fecha:'6 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud'},
+    {entidad:'Ministerio de Comercio Exterior y Turismo del Per\u00fa',anio:'2021',numero:'009-2021-MINCETUR',titulo:'Reglamento de Establecimientos de Hospedaje',fecha:'23 de junio de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
+    {entidad:'Presidencia del Consejo de Ministros del Per\u00fa',anio:'2021',numero:'162-2021-PCM',titulo:'Decreto que declara el Estado de Emergencia Nacional por la pandemia COVID-19',fecha:'30 de septiembre de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud p\u00fablica'},
+    {entidad:'Ministerio de Econom\u00eda y Finanzas del Per\u00fa',anio:'2016',numero:'215-2016-EF',titulo:'Reglamento de la Ley N.\u00b0 30372 \u2014 Ley de Presupuesto del Sector P\u00fablico',fecha:'24 de agosto de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
+  ]},
+  {grupo:'\u{1F4DC} Normas legales',icono:'\u2696\uFE0F',seccion:'Decretos legislativos',tipo:'decreto_legislativo',normas:[
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2008',numero:'1057',titulo:'Decreto Legislativo que regula el R\u00e9gimen Especial de Contrataci\u00f3n Administrativa de Servicios (CAS)',fecha:'28 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Recursos humanos'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2018',numero:'1407',titulo:'Decreto Legislativo que fortalece el Servicio de Defensa P\u00fablica',fecha:'12 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1215995',area:'Justicia'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2008',numero:'1017',titulo:'Decreto Legislativo que aprueba la Ley de Contrataciones del Estado',fecha:'4 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Contrataciones'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2016',numero:'1310',titulo:'Decreto Legislativo que aprueba medidas adicionales de simplificaci\u00f3n administrativa',fecha:'30 de diciembre de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Administraci\u00f3n p\u00fablica'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2017',numero:'1352',titulo:'Decreto Legislativo que ampl\u00eda la responsabilidad administrativa de las personas jur\u00eddicas',fecha:'7 de enero de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Anticorrupci\u00f3n'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'1991',numero:'757',titulo:'Decreto Legislativo \u2014 Ley Marco para el Crecimiento de la Inversi\u00f3n Privada',fecha:'13 de noviembre de 1991',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Inversi\u00f3n privada'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2018',numero:'1440',titulo:'Decreto Legislativo del Sistema Nacional de Presupuesto P\u00fablico',fecha:'16 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2018',numero:'1401',titulo:'Decreto Legislativo que establece el r\u00e9gimen de protecci\u00f3n de datos de fuentes period\u00edsticas',fecha:'9 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Comunicaciones'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2004',numero:'953',titulo:'Decreto Legislativo que modifica el C\u00f3digo Tributario',fecha:'5 de febrero de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Tributario'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'1996',numero:'823',titulo:'Decreto Legislativo sobre la Ley de Propiedad Industrial',fecha:'24 de abril de 1996',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Propiedad intelectual'},
+  ]},
+  {grupo:'\u{1F4DC} Normas legales',icono:'\u{1F6A8}',seccion:'Decretos de urgencia',tipo:'decreto_supremo',normas:[
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'026-2020',titulo:'Decreto de Urgencia que establece medidas excepcionales para prevenir la propagaci\u00f3n del COVID-19',fecha:'15 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud p\u00fablica'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'027-2020',titulo:'Decreto de Urgencia que establece el trabajo remoto',fecha:'23 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral / TIC'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'044-2020',titulo:'Decreto de Urgencia que declara el Estado de Emergencia Nacional',fecha:'16 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud p\u00fablica'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'090-2020',titulo:'Decreto de Urgencia que autoriza el retiro extraordinario de la CTS',fecha:'7 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2019',numero:'006-2019',titulo:'Decreto de Urgencia que establece medidas urgentes para promover la econom\u00eda formal',fecha:'18 de agosto de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Econom\u00eda'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'070-2020',titulo:'Decreto de Urgencia que establece medidas complementarias para mitigar efectos econ\u00f3micos del COVID-19',fecha:'23 de junio de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Econom\u00eda'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2021',numero:'020-2021',titulo:'Decreto de Urgencia que establece el marco normativo para el impulso de proyectos de inversi\u00f3n',fecha:'11 de marzo de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Inversi\u00f3n p\u00fablica'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2021',numero:'037-2021',titulo:'Decreto de Urgencia que aprueba medidas adicionales para vacunaci\u00f3n contra COVID-19',fecha:'25 de mayo de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud p\u00fablica'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2022',numero:'012-2022',titulo:'Decreto de Urgencia que establece medidas para garantizar liquidez en hogares y empresas',fecha:'20 de febrero de 2022',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas'},
+    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2019',numero:'014-2019',titulo:'Decreto de Urgencia para garantizar la integridad de los procesos electorales',fecha:'30 de septiembre de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Gobernanza'},
+  ]},
+  {grupo:'\u{1F4C4} Resoluciones',icono:'\u{1F4C4}',seccion:'Resoluciones ministeriales',tipo:'resolucion_ministerial',normas:[
+    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2020',numero:'093-2020-MINEDU',titulo:'Orientaciones para la continuidad del servicio educativo en el marco de la emergencia sanitaria',fecha:'30 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n'},
+    {entidad:'Ministerio de Salud del Per\u00fa',anio:'2020',numero:'186-2020/MINSA',titulo:'Gu\u00eda T\u00e9cnica para el cuidado de la salud mental de la poblaci\u00f3n afectada por COVID-19',fecha:'8 de abril de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud mental'},
+    {entidad:'Ministerio de Trabajo y Promoci\u00f3n del Empleo del Per\u00fa',anio:'2016',numero:'107-2016-TR',titulo:'Gu\u00eda para la aplicaci\u00f3n del principio de igualdad y no discriminaci\u00f3n en el empleo',fecha:'18 de junio de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral'},
+    {entidad:'Ministerio de Econom\u00eda y Finanzas del Per\u00fa',anio:'2020',numero:'0014-2020-EF/15',titulo:'Directiva de Programaci\u00f3n Multianual 2021\u20132023',fecha:'10 de enero de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
+    {entidad:'Ministerio de Comercio Exterior y Turismo del Per\u00fa',anio:'2019',numero:'0065-2019-MINCETUR',titulo:'Plan Estrat\u00e9gico Nacional de Turismo 2025',fecha:'14 de marzo de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
+    {entidad:'Ministerio de Trabajo y Promoci\u00f3n del Empleo del Per\u00fa',anio:'2018',numero:'176-2018-TR',titulo:'Aprueban el Protocolo de Actuaci\u00f3n Sectorial en casos de hostigamiento sexual',fecha:'28 de junio de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral / G\u00e9nero'},
+    {entidad:'Ministerio del Ambiente del Per\u00fa',anio:'2020',numero:'073-2020-MINAM',titulo:'Aprueban Pol\u00edtica Nacional del Ambiente al 2030',fecha:'30 de octubre de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Medio ambiente'},
+    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2021',numero:'531-2021-MINEDU',titulo:'Disposiciones para la calificaci\u00f3n del m\u00e9rito de docentes en carrera p\u00fablica',fecha:'30 de octubre de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n'},
+    {entidad:'Ministerio de la Producci\u00f3n del Per\u00fa',anio:'2021',numero:'091-2021-PRODUCE',titulo:'Plan Nacional de Diversificaci\u00f3n Productiva',fecha:'24 de mayo de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Industria'},
+    {entidad:'Ministerio de Desarrollo Agrario y Riego del Per\u00fa',anio:'2021',numero:'0246-2021-MIDAGRI',titulo:'Plan de Gesti\u00f3n de Riesgos y Adaptaci\u00f3n al Cambio Clim\u00e1tico en el Sector Agrario',fecha:'30 de junio de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Agro / Clima'},
+  ]},
+  {grupo:'\u{1F4C4} Resoluciones',icono:'\u{1F4C2}',seccion:'Resoluciones directorales',tipo:'resolucion_directoral',normas:[
+    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2020',numero:'00340-2020-MINEDU',titulo:'Norma que regula el proceso de evaluaci\u00f3n de los aprendizajes de los estudiantes de Educaci\u00f3n B\u00e1sica Regular',fecha:'3 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n b\u00e1sica'},
+    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2021',numero:'00098-2021-MINEDU',titulo:'Disposiciones para la prestaci\u00f3n del servicio educativo en el a\u00f1o escolar 2021',fecha:'12 de febrero de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n'},
+    {entidad:'Superintendencia Nacional de Educaci\u00f3n Superior Universitaria (SUNEDU)',anio:'2020',numero:'039-2020-SUNEDU/CD',titulo:'Resoluci\u00f3n del Consejo Directivo que modifica el Reglamento del Procedimiento de Licenciamiento',fecha:'28 de febrero de 2020',url:'https://www.sunedu.gob.pe/',area:'Educaci\u00f3n superior'},
+    {entidad:'Direcci\u00f3n General de Salud Ambiental (DIGESA)',anio:'2019',numero:'001-2019-DIGESA',titulo:'Protocolo nacional de vigilancia de la calidad del agua para consumo humano',fecha:'15 de enero de 2019',url:'https://www.digesa.minsa.gob.pe/',area:'Salud ambiental'},
+    {entidad:'Ministerio de Trabajo y Promoci\u00f3n del Empleo del Per\u00fa',anio:'2017',numero:'018-2017-MTPE/2',titulo:'Directiva de normas para la verificaci\u00f3n del cumplimiento de obligaciones laborales',fecha:'3 de agosto de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral'},
+    {entidad:'Ministerio de Econom\u00eda y Finanzas del Per\u00fa',anio:'2019',numero:'001-2019-EF/50.01',titulo:'Directiva para la programaci\u00f3n y formulaci\u00f3n anual del presupuesto del sector p\u00fablico',fecha:'8 de enero de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
+    {entidad:'Ministerio del Ambiente del Per\u00fa',anio:'2020',numero:'003-2020-MINAM/DGPML',titulo:'Lineamientos para la implementaci\u00f3n de la estrategia nacional ante el cambio clim\u00e1tico',fecha:'20 de febrero de 2020',url:'https://www.minam.gob.pe/',area:'Medio ambiente'},
+    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2022',numero:'00025-2022-MINEDU',titulo:'Orientaciones pedag\u00f3gicas para el desarrollo del a\u00f1o escolar 2022',fecha:'20 de enero de 2022',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n'},
+    {entidad:'Ministerio de Salud del Per\u00fa',anio:'2018',numero:'078-2018/MINSA',titulo:'Protocolo de atenci\u00f3n de emergencias obst\u00e9tricas en establecimientos de salud',fecha:'8 de agosto de 2018',url:'https://www.minsa.gob.pe/',area:'Salud'},
+    {entidad:'Ministerio de Comercio Exterior y Turismo del Per\u00fa',anio:'2018',numero:'0006-2018-MINCETUR',titulo:'Normas t\u00e9cnicas complementarias para el establecimiento de hospedaje',fecha:'18 de enero de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
+  ]},
+  {grupo:'\u{1F3D9}\uFE0F Acuerdos, Ordenanzas y Normas T\u00e9cnicas',icono:'\u{1F52C}',seccion:'Normas t\u00e9cnicas (NTP / INACAL)',tipo:'norma_tecnica',normas:[
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 9001:2015',titulo:'Sistemas de gesti\u00f3n de la calidad. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Calidad'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 14001:2015',titulo:'Sistemas de gesti\u00f3n ambiental. Requisitos con orientaci\u00f3n para su uso',fecha:'',url:'https://www.inacal.gob.pe/',area:'Medio ambiente'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 45001:2018',titulo:'Sistemas de gesti\u00f3n de la seguridad y salud en el trabajo. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Seguridad y salud'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2013',numero:'NTP-ISO/IEC 27001:2013',titulo:'Tecnolog\u00eda de la informaci\u00f3n. T\u00e9cnicas de seguridad. Sistemas de gesti\u00f3n de la seguridad de la informaci\u00f3n',fecha:'',url:'https://www.inacal.gob.pe/',area:'Seguridad inform\u00e1tica'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2017',numero:'NTP-ISO 37001:2017',titulo:'Sistemas de gesti\u00f3n antisoborno. Requisitos con orientaci\u00f3n para su uso',fecha:'',url:'https://www.inacal.gob.pe/',area:'Anticorrupci\u00f3n'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 22000:2018',titulo:'Sistemas de gesti\u00f3n de la inocuidad de los alimentos. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Inocuidad alimentaria'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 31000:2018',titulo:'Gesti\u00f3n del riesgo. Directrices',fecha:'',url:'https://www.inacal.gob.pe/',area:'Gesti\u00f3n de riesgos'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2010',numero:'NTP-ISO 26000:2010',titulo:'Gu\u00eda de responsabilidad social',fecha:'',url:'https://www.inacal.gob.pe/',area:'RSE'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP 399.010-1:2015',titulo:'Se\u00f1ales de seguridad. Colores, s\u00edmbolos, formas y dimensiones de se\u00f1ales de seguridad',fecha:'',url:'https://www.inacal.gob.pe/',area:'Seguridad industrial'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2017',numero:'NTP-ISO/IEC 17025:2017',titulo:'Requisitos generales para la competencia de los laboratorios de ensayo y calibraci\u00f3n',fecha:'',url:'https://www.inacal.gob.pe/',area:'Metrolog\u00eda / Laboratorios'},
+  ]},
+];
+
+let tipoActivo='constitucion';
+const $=id=>document.getElementById(id);
+const v=id=>{const e=$(id);return e?e.value.trim():''};
+const eh=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+document.querySelectorAll('.main-tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.main-tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');$('panel-'+b.dataset.panel).classList.add('active');
+}));
+
+document.querySelectorAll('.tipo-tabs').forEach(c=>c.addEventListener('click',e=>{
+  const b=e.target.closest('.tipo-btn');if(!b)return;
+  document.querySelectorAll('.tipo-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');tipoActivo=b.dataset.tipo;applyPH(tipoActivo);update();
+}));
+
+function applyPH(tipo){
+  const t=TIPOS[tipo],ph=t.ph,ej=t.ejCampos;
+  $('entidad').placeholder='ej. '+ph.entidad;
+  $('titulo').placeholder=ph.titulo?'ej. '+ph.titulo:'Ingrese el t\u00edtulo de la norma';
+  $('fechaPublicacion').placeholder=ph.fecha?'ej. '+ph.fecha:'ej. 15 de enero de 2020';
+  $('url').placeholder=ph.url||'https://spij.minjus.gob.pe/...';
+  $('hintBox').innerHTML=t.hintHTML;
+  $('grpArticulo').style.display=tipo==='constitucion'?'':'none';
+  const gn=$('grpNumero');
+  if(t.tieneNumero){gn.style.display='';$('numero').placeholder='ej. '+(ph.numero||'');}
+  else{gn.style.display='none';$('numero').value='';}
+  showEj('ejEntidad','ejEntidadTxt',ej.entidad,ph.entidad);
+  showEj('ejAnio','ejAnioTxt',ej.anio,ph.anio);
+  showEj('ejTitulo','ejTituloTxt',ej.titulo,ph.titulo);
+  showEj('ejFecha','ejFechaTxt',ej.fecha,ph.fecha);
+  showEj('ejUrl','ejUrlTxt',ej.url,ph.url);
+}
+function showEj(rId,tId,show,val){
+  const r=$(rId),t=$(tId);if(!r)return;
+  if(show&&val){r.style.display='flex';t.textContent=val;}else r.style.display='none';
+}
+function usarEjemplo(fId){
+  const el=$(fId);if(!el)return;
+  const ph=TIPOS[tipoActivo].ph;
+  const map={entidad:ph.entidad,anio:ph.anio,titulo:ph.titulo,fechaPublicacion:ph.fecha,url:ph.url};
+  if(map[fId]){el.value=map[fId];update();}
+}
+
+const MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const DIA=['Do','Lu','Ma','Mi','Ju','Vi','Sa'];
+let calDate=new Date();
+function buildCal(){
+  const y=calDate.getFullYear(),m=calDate.getMonth();
+  $('calMonthLabel').textContent=MES[m][0].toUpperCase()+MES[m].slice(1)+' '+y;
+  const g=$('calGrid'),td=new Date();
+  g.innerHTML=DIA.map(d=>`<span class="cal-dh">${d}</span>`).join('');
+  const first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();
+  for(let i=0;i<first;i++)g.innerHTML+=`<button class="cal-d other" disabled>${new Date(y,m,-first+i+1).getDate()}</button>`;
+  for(let d=1;d<=days;d++){
+    const iT=d===td.getDate()&&m===td.getMonth()&&y===td.getFullYear();
+    g.innerHTML+=`<button class="cal-d${iT?' today':''}" data-d="${d}" data-m="${m}" data-y="${y}">${d}</button>`;
+  }
+}
+$('btnCal').addEventListener('click',e=>{e.stopPropagation();calDate=new Date();buildCal();$('calPopup').classList.toggle('open');});
+$('calPrev').addEventListener('click',()=>{calDate.setMonth(calDate.getMonth()-1);buildCal();});
+$('calNext').addEventListener('click',()=>{calDate.setMonth(calDate.getMonth()+1);buildCal();});
+$('calGrid').addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(!b)return;$('fechaPublicacion').value=`${b.dataset.d} de ${MES[+b.dataset.m]} de ${b.dataset.y}`;$('calPopup').classList.remove('open');update();});
+document.addEventListener('click',e=>{if(!$('calPopup').contains(e.target)&&e.target!==$('btnCal'))$('calPopup').classList.remove('open');});
+
+function bldTitle(tipo,num,tit){const t=TIPOS[tipo];if(!t.tieneNumero)return tit||'[T\u00edtulo de la norma]';return t.label+' '+(num||'[N.\u00b0]')+'. '+(tit||'[T\u00edtulo]');}
+
+function bldRIS(){
+  const t=TIPOS[tipoActivo],ent=v('entidad')||'[Entidad]',yr=v('anio')||'[A\u00f1o]',num=v('numero'),tit=v('titulo')||'[T\u00edtulo]',fec=v('fechaPublicacion'),url=v('url');
+  const L=[['TY',t.risType],['AU',ent],['PY',yr],['TI',bldTitle(tipoActivo,num,tit)],['PB','Diario Oficial El Peruano'],['CY','Lima, Per\u00fa'],['LA','Espa\u00f1ol']];
+  if(fec)L.push(['DA',fec]);if(url)L.push(['UR',url]);
+  L.push(['KW',t.label],['KW','Per\u00fa'],['KW','norma legal'],['ER','']);return L;
+}
+function renderRISH(L){return L.map(([k,va])=>{if(k==='ER')return`<span class="ris-er">ER</span><span class="ris-sep">  - </span>`;const c=k==='KW'?'ris-kw':'ris-val';return`<span class="ris-tag">${k}</span><span class="ris-sep">  - </span><span class="${c}">${eh(va)}</span>`;}).join('\n');}
+function renderRIST(L){return L.map(([k,va])=>k==='ER'?'ER  -':`${k}  - ${va}`).join('\r\n');}
+function renderRISTbl(L){
+  const tb=$('risTable');tb.innerHTML='';
+  L.forEach(([k,va])=>{const tr=document.createElement('tr');tr.innerHTML=`<td style="padding:7px 10px;border-bottom:1px solid var(--border);font-family:monospace;color:var(--accent);font-weight:700">${k}</td><td style="padding:7px 10px;border-bottom:1px solid var(--border);color:var(--text-muted)">${RIS_META[k]||''}</td><td style="padding:7px 10px;border-bottom:1px solid var(--border);color:var(--text);font-size:12px">${k==='ER'?'<em style="color:var(--text-hint)">fin de registro</em>':eh(va)}</td>`;tb.appendChild(tr);});
+}
+
+function update(){
+  const t=TIPOS[tipoActivo],ent=v('entidad'),yr=v('anio'),num=v('numero'),tit=v('titulo'),fec=v('fechaPublicacion'),url=v('url'),art=v('articulo');
+  const tH=bldTitle(tipoActivo,num,tit?eh(tit):'<span class="ref-placeholder">[T\u00edtulo]</span>');
+  let ref=`${ent?eh(ent):'<span class="ref-placeholder">[Entidad emisora]</span>'}. (${yr?eh(yr):'<span class="ref-placeholder">[A\u00f1o]</span>'}). <em>${tH}.</em>`;
+  if(fec)ref+=` Diario Oficial El Peruano del ${eh(fec)}.`;
+  if(url)ref+=` <span class="url">${eh(url)}</span>`;
+  $('refCompleta').innerHTML=ref;
+  const e2=ent||'[Entidad]',y2=yr||'[A\u00f1o]',nRef=t.tieneNumero&&num?`${t.label} ${num}`:t.label,aRef=art?`, ${art}`:`, art\u00edculo X`;
+  $('citaNarrativa').textContent=`La ${nRef} establece que "\u2026" (${e2}, ${y2}${aRef}).`;
+  $('citaParentetica').textContent=`"\u2026" (${e2}, ${y2}, ${nRef}${aRef}).`;
+  const L=bldRIS();$('risPreview').innerHTML=renderRISH(L);renderRISTbl(L);
+}
+
+['entidad','anio','numero','titulo','fechaPublicacion','url','articulo'].forEach(id=>{const el=$(id);if(el)el.addEventListener('input',update);});
+
+$('btnDownloadRIS').addEventListener('click',()=>{
+  const c=renderRIST(bldRIS()),b=new Blob(['\uFEFF'+c],{type:'application/x-research-info-systems;charset=utf-8'});
+  const fn=(v('titulo')||'norma_legal').substring(0,50).replace(/\s+/g,'_').toLowerCase()+'.ris';
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fn;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);
+});
+$('btnCopyAPA').addEventListener('click',()=>{
+  const tF=bldTitle(tipoActivo,v('numero'),v('titulo')||'[T\u00edtulo]');
+  let p=`${v('entidad')||'[Entidad]'}. (${v('anio')||'[A\u00f1o]'}). ${tF}.`;
+  if(v('fechaPublicacion'))p+=` Diario Oficial El Peruano del ${v('fechaPublicacion')}.`;
+  if(v('url'))p+=` ${v('url')}`;
+  navigator.clipboard.writeText(p).then(()=>showToast('toastAPA'));
+});
+$('btnCopyRIS').addEventListener('click',()=>navigator.clipboard.writeText(renderRIST(bldRIS())).then(()=>showToast('toastRIS')));
+function showToast(id){const e=$(id);e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200);}
+
+function cargar(norma,tipo){
+  tipoActivo=tipo;document.querySelectorAll('.tipo-btn').forEach(b=>b.classList.remove('active'));
+  const b=document.querySelector(`.tipo-btn[data-tipo="${tipo}"]`);if(b)b.classList.add('active');
+  applyPH(tipo);$('entidad').value=norma.entidad;$('anio').value=norma.anio;
+  if(TIPOS[tipo].tieneNumero)$('numero').value=norma.numero||'';
+  $('titulo').value=norma.titulo;$('fechaPublicacion').value=norma.fecha||'';$('url').value=norma.url||'';
+  update();document.querySelectorAll('.main-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelector('.main-tab[data-panel="generador"]').classList.add('active');
+  $('panel-generador').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function buildAccordion(){
+  const c=$('nfAccordion');let lg='';
+  NORMAS_FRECUENTES.forEach((sec,si)=>{
+    if(sec.grupo!==lg){lg=sec.grupo;const lbl=document.createElement('p');lbl.className='nf-grupo-label';lbl.textContent=sec.grupo;c.appendChild(lbl);}
+    const div=document.createElement('div');div.className='nf-section';
+    div.innerHTML=`<div class="nf-section-header"><div class="nf-section-left"><span class="nf-section-icon">${sec.icono}</span><div><div class="nf-section-title">${sec.seccion}</div><div class="nf-section-count">${sec.normas.length} normas</div></div></div><span class="nf-chevron">\u2304</span></div><div class="nf-list">${sec.normas.map((n,ni)=>`<div class="nf-item"><div class="nf-item-num">${ni+1}</div><div class="nf-item-body"><div class="nf-item-ref">${eh(n.entidad)}. (${eh(n.anio)}). <em>${eh(TIPOS[sec.tipo].tieneNumero?TIPOS[sec.tipo].label+' '+n.numero+'. '+n.titulo:n.titulo)}.</em>${n.fecha?' Diario Oficial El Peruano del '+eh(n.fecha)+'.':''}</div><div class="nf-item-tags"><span class="nf-tag nf-tag-area">${eh(n.area||'')}</span><span class="nf-tag nf-tag-year">${eh(n.anio)}</span></div></div><button class="btn-usar" data-si="${si}" data-ni="${ni}">Usar en generador \u2197</button></div>`).join('')}</div>`;
+    c.appendChild(div);
+    div.querySelector('.nf-section-header').addEventListener('click',()=>div.classList.toggle('open'));
+    div.querySelectorAll('.btn-usar').forEach(b=>b.addEventListener('click',e=>{const s=NORMAS_FRECUENTES[e.target.dataset.si];cargar(s.normas[e.target.dataset.ni],s.tipo);}));
+  });
+}
+
+applyPH(tipoActivo);update();buildAccordion();
+</script>
+</body>
+</html>
