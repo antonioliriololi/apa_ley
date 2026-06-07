@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Generador de Referencias - Normas Legales APA 7</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Generador de Referencias — Normas Legales APA 7</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --accent:#185FA5;--accent-hover:#0C447C;--accent-light:#E6F1FB;--accent-text:#0C447C;
-  --bg:#F8F7F4;--surface:#FFFFFF;--surface2:#F1EFE8;
-  --border:rgba(0,0,0,0.12);--border-md:rgba(0,0,0,0.22);
-  --text:#1A1A18;--text-muted:#5F5E5A;--text-hint:#888780;
-  --success:#0F6E56;--danger:#A32D2D;
-  --radius:10px;--radius-sm:6px;--radius-pill:24px;
-  --shadow:0 1px 4px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.06)
+  --accent:#185FA5;--accent-hover:#134d8a;--accent-light:#EAF2FC;--accent-text:#134d8a;
+  --bg:#F5F7FA;--surface:#FFFFFF;--surface2:#F0F4F9;--border:#DDE3ED;--border-md:#C5D0DF;
+  --text:#1A2332;--text-muted:#556070;--text-hint:#8A95A3;
+  --danger:#C0392B;--success:#0F6E56;
+  --radius:10px;--radius-sm:6px;--radius-pill:999px;
+  --shadow:0 1px 4px rgba(0,0,0,.07),0 2px 12px rgba(0,0,0,.05);
 }
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:0 0 4rem}
-.topbar{background:var(--accent);padding:1rem 2rem;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
-.topbar h1{font-size:16px;font-weight:600;color:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+.topbar{background:var(--accent);color:#fff;display:flex;align-items:center;gap:14px;padding:.875rem 1.5rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.topbar h1{font-size:15px;font-weight:700;letter-spacing:-.01em}
 .topbar p{font-size:12px;color:rgba(255,255,255,.75);margin-top:1px}
 .topbar-badge{margin-left:auto;background:rgba(255,255,255,.2);color:#fff;font-size:11px;padding:4px 10px;border-radius:var(--radius-pill);border:1px solid rgba(255,255,255,.35);font-weight:500;white-space:nowrap}
-.main-tab-bar{background:var(--surface);border-bottom:1px solid var(--border);display:flex;position:sticky;top:61px;z-index:90}
-.main-tab{padding:12px 24px;font-size:13px;font-weight:500;border:none;background:none;color:var(--text-muted);cursor:pointer;border-bottom:3px solid transparent;transition:all .18s;white-space:nowrap}
+.main-tab-bar{background:var(--surface);border-bottom:1px solid var(--border);display:flex;position:sticky;top:61px;z-index:90;overflow-x:auto}
+.main-tab{padding:12px 24px;font-size:13px;font-weight:500;border:none;background:none;color:var(--text-muted);cursor:pointer;border-bottom:3px solid transparent;transition:all .18s;white-space:nowrap;flex-shrink:0}
 .main-tab:hover{color:var(--accent)}
 .main-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .tab-panel{display:none}
@@ -96,6 +95,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--
 .btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .toast{font-size:12.5px;color:var(--success);font-weight:500;display:none;align-items:center;gap:5px}
 .toast.show{display:inline-flex}
+/* ── Normas frecuentes ── */
 .nf-container{max-width:880px;margin:0 auto;padding:2rem 1.5rem}
 .nf-intro{font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:1.5rem}
 .nf-grupo-label{font-size:11px;font-weight:700;color:var(--text-hint);letter-spacing:.08em;text-transform:uppercase;margin:1.5rem 0 8px;padding-left:2px}
@@ -123,56 +123,115 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--
 .nf-tag-year{background:var(--surface2);color:var(--text-muted)}
 .btn-usar{font-size:11px;padding:5px 12px;border-radius:var(--radius-pill);border:1px solid var(--accent);background:var(--accent-light);color:var(--accent);cursor:pointer;font-weight:600;transition:all .15s;white-space:nowrap;flex-shrink:0;margin-top:2px}
 .btn-usar:hover{background:var(--accent);color:#fff}
+
+/* ── TEMAS MÁS INVESTIGADOS ── */
+.temas-container{max-width:880px;margin:0 auto;padding:2rem 1.5rem}
+.temas-intro{font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem}
+.buscador-wrap{position:relative;margin-bottom:1.5rem}
+.buscador-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:var(--text-hint);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+#buscadorTemas{width:100%;padding:11px 14px 11px 40px;font-size:14px;border-radius:var(--radius-sm);border:1.5px solid var(--border-md);background:var(--surface);color:var(--text);font-family:inherit;transition:border-color .15s,box-shadow .15s}
+#buscadorTemas:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(24,95,165,.12)}
+#buscadorTemas::placeholder{color:var(--text-hint);font-style:italic}
+.search-resultados{background:var(--surface);border:1px solid var(--border-md);border-radius:var(--radius-sm);box-shadow:0 8px 24px rgba(0,0,0,.1);position:absolute;width:100%;top:calc(100% + 4px);z-index:300;display:none;max-height:340px;overflow-y:auto}
+.search-resultados.open{display:block}
+.search-item{padding:10px 16px;cursor:pointer;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;transition:background .12s}
+.search-item:last-child{border-bottom:none}
+.search-item:hover{background:var(--accent-light)}
+.search-item-tema{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.search-item-norma{font-size:12.5px;color:var(--text);line-height:1.5}
+.search-item-norma em{font-style:italic}
+.search-item-icon{font-size:16px;margin-top:1px;flex-shrink:0}
+.search-empty{padding:18px;text-align:center;font-size:13px;color:var(--text-hint);font-style:italic}
+.tema-section{margin-bottom:8px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow);overflow:hidden;transition:opacity .2s}
+.tema-section.hidden{display:none}
+.tema-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;user-select:none;transition:background .15s}
+.tema-header:hover{background:var(--surface2)}
+.tema-header-left{display:flex;align-items:center;gap:12px}
+.tema-icono{font-size:20px}
+.tema-titulo{font-size:14px;font-weight:700;color:var(--text)}
+.tema-subtitulo{font-size:11px;color:var(--text-hint);margin-top:2px}
+.tema-badge{font-size:10px;padding:2px 9px;border-radius:var(--radius-pill);background:var(--accent-light);color:var(--accent);font-weight:700;border:1px solid rgba(24,95,165,.18)}
+.tema-chevron{font-size:18px;color:var(--text-hint);transition:transform .22s;display:inline-block}
+.tema-section.open .tema-chevron{transform:rotate(180deg)}
+.tema-list{display:none;border-top:1px solid var(--border)}
+.tema-section.open .tema-list{display:block}
+.tema-item{display:flex;align-items:flex-start;gap:12px;padding:11px 18px;border-bottom:1px solid var(--border);transition:background .12s}
+.tema-item:last-child{border-bottom:none}
+.tema-item:hover{background:var(--surface2)}
+.tema-item-num{min-width:22px;height:22px;border-radius:50%;background:var(--accent-light);color:var(--accent);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.tema-item-body{flex:1;min-width:0}
+.tema-item-codigo{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.04em;margin-bottom:2px}
+.tema-item-titulo{font-size:13px;color:var(--text);line-height:1.5}
+.tema-item-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.tema-tag{font-size:10px;padding:2px 8px;border-radius:var(--radius-pill);font-weight:600;background:#E8F4FE;color:#185FA5}
+.tema-tag-tipo{background:#FEF3E8;color:#9A5000}
+.tema-item-actions{display:flex;gap:6px;flex-shrink:0;align-items:flex-start;margin-top:2px;flex-wrap:wrap}
+.btn-ris-tema{font-size:11px;padding:5px 11px;border-radius:var(--radius-pill);border:1px solid #0F6E56;background:#E1F5EE;color:#0F6E56;cursor:pointer;font-weight:600;transition:all .15s;white-space:nowrap}
+.btn-ris-tema:hover{background:#0F6E56;color:#fff}
+.btn-gen-tema{font-size:11px;padding:5px 11px;border-radius:var(--radius-pill);border:1px solid var(--accent);background:var(--accent-light);color:var(--accent);cursor:pointer;font-weight:600;transition:all .15s;white-space:nowrap}
+.btn-gen-tema:hover{background:var(--accent);color:#fff}
+
 .footer{text-align:center;font-size:11.5px;color:var(--text-hint);margin-top:3rem;line-height:1.8}
 .footer a{color:var(--accent);text-decoration:none}
-@media(max-width:640px){.topbar{padding:.75rem 1rem}.topbar-badge{display:none}.container,.nf-container{padding:1.25rem 1rem}.card{padding:1.25rem 1rem}.main-tab{padding:10px 12px;font-size:12px}.tipo-btn{padding:8px 10px;font-size:12px}}
+@media(max-width:640px){
+  .topbar{padding:.75rem 1rem}.topbar-badge{display:none}
+  .container,.nf-container,.temas-container{padding:1.25rem 1rem}
+  .card{padding:1.25rem 1rem}
+  .main-tab{padding:10px 12px;font-size:12px}
+  .tipo-btn{padding:8px 10px;font-size:12px}
+  .tema-item-actions{flex-direction:column}
+}
 </style>
 </head>
 <body>
 <div class="topbar">
-  <span style="font-size:22px">&#128196;</span>
-  <div><h1>Generador de Referencias &mdash; Normas Legales</h1><p>Formato APA 7.&#170; edici&#243;n &middot; Exportaci&#243;n .ris (Zotero / Mendeley / EndNote)</p></div>
-  <span class="topbar-badge">APA 7 &middot; RIS</span>
+  <span style="font-size:22px">📄</span>
+  <div><h1>Generador de Referencias — Normas Legales</h1><p>Formato APA 7.ª edición · Exportación .ris (Zotero / Mendeley / EndNote)</p></div>
+  <span class="topbar-badge">APA 7 · RIS</span>
 </div>
 <div class="main-tab-bar">
-  <button class="main-tab active" data-panel="generador">&#9997;&#65039; Generador de referencias</button>
-  <button class="main-tab" data-panel="normas">&#128203; Normas m&#225;s citadas en tesis</button>
+  <button class="main-tab active" data-panel="generador">✍️ Generador de referencias</button>
+  <button class="main-tab" data-panel="normas">📋 Normas más citadas en tesis</button>
+  <button class="main-tab" data-panel="temas">🔍 Temas más investigados</button>
 </div>
 
+<!-- ═══════════════════════════════════════════════════
+     PESTAÑA 1: GENERADOR
+════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="panel-generador">
 <div class="container">
   <div style="margin-bottom:1.5rem">
     <div class="grupo-block">
       <div class="grupo-header">
-        <div class="grupo-titulo">&#128220; Normas legales</div>
+        <div class="grupo-titulo">📜 Normas legales</div>
         <div class="tipo-tabs">
-          <button class="tipo-btn active" data-tipo="constitucion">Constituci&#243;n</button>
+          <button class="tipo-btn active" data-tipo="constitucion">Constitución</button>
           <button class="tipo-btn" data-tipo="ley">Ley</button>
           <button class="tipo-btn" data-tipo="decreto_legislativo">Decreto legislativo</button>
           <button class="tipo-btn" data-tipo="decreto_supremo">Decreto supremo</button>
-          <button class="tipo-btn" data-tipo="codigo_civil">C&#243;digo civil</button>
-          <button class="tipo-btn" data-tipo="codigo_penal">C&#243;digo penal</button>
+          <button class="tipo-btn" data-tipo="codigo_civil">Código civil</button>
+          <button class="tipo-btn" data-tipo="codigo_penal">Código penal</button>
         </div>
       </div>
     </div>
     <div class="grupo-block">
       <div class="grupo-header">
-        <div class="grupo-titulo">&#128209; Resoluciones</div>
+        <div class="grupo-titulo">📑 Resoluciones</div>
         <div class="tipo-tabs">
-          <button class="tipo-btn" data-tipo="resolucion_ministerial">Resoluci&#243;n Ministerial</button>
-          <button class="tipo-btn" data-tipo="resolucion_legislativa">Resoluci&#243;n Legislativa</button>
-          <button class="tipo-btn" data-tipo="resolucion_tribunal_fiscal">Resoluci&#243;n del Tribunal Fiscal</button>
-          <button class="tipo-btn" data-tipo="resolucion_directoral">Resoluci&#243;n Directoral</button>
+          <button class="tipo-btn" data-tipo="resolucion_ministerial">Resolución Ministerial</button>
+          <button class="tipo-btn" data-tipo="resolucion_legislativa">Resolución Legislativa</button>
+          <button class="tipo-btn" data-tipo="resolucion_tribunal_fiscal">Resolución del Tribunal Fiscal</button>
+          <button class="tipo-btn" data-tipo="resolucion_directoral">Resolución Directoral</button>
         </div>
       </div>
     </div>
     <div class="grupo-block">
       <div class="grupo-header">
-        <div class="grupo-titulo">&#127970; Acuerdos y Ordenanzas Municipales</div>
+        <div class="grupo-titulo">🏛️ Acuerdos y Ordenanzas Municipales</div>
         <div class="tipo-tabs">
           <button class="tipo-btn" data-tipo="acuerdo_municipal">Acuerdos</button>
           <button class="tipo-btn" data-tipo="ordenanza_municipal">Ordenanzas</button>
-          <button class="tipo-btn" data-tipo="norma_tecnica">Norma t&#233;cnica</button>
+          <button class="tipo-btn" data-tipo="norma_tecnica">Norma técnica</button>
         </div>
       </div>
     </div>
@@ -186,70 +245,70 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--
       <div class="form-group" style="grid-column:1/-1">
         <label>Entidad que emite la norma <span class="req">*</span></label>
         <input type="text" id="entidad" autocomplete="off"/>
-        <div class="ejemplo-row" id="ejEntidad"><button class="btn-ejemplo" onclick="usarEjemplo('entidad')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejEntidadTxt"></span></div>
+        <div class="ejemplo-row" id="ejEntidad"><button class="btn-ejemplo" onclick="usarEjemplo('entidad')">↩ Usar ejemplo</button><span class="ejemplo-text" id="ejEntidadTxt"></span></div>
       </div>
       <div class="form-group">
-        <label>A&#241;o de publicaci&#243;n <span class="req">*</span></label>
+        <label>Año de publicación <span class="req">*</span></label>
         <input type="text" id="anio" maxlength="4" autocomplete="off"/>
-        <div class="ejemplo-row" id="ejAnio" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('anio')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejAnioTxt"></span></div>
+        <div class="ejemplo-row" id="ejAnio" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('anio')">↩ Usar ejemplo</button><span class="ejemplo-text" id="ejAnioTxt"></span></div>
       </div>
       <div class="form-group" id="grpNumero">
-        <label>N&#250;mero de la norma <span class="req">*</span></label>
+        <label>Número de la norma <span class="req">*</span></label>
         <input type="text" id="numero" autocomplete="off"/>
       </div>
       <div class="form-group" style="grid-column:1/-1">
-        <label>T&#237;tulo de la norma <span class="req">*</span></label>
+        <label>Título de la norma <span class="req">*</span></label>
         <input type="text" id="titulo" autocomplete="off"/>
-        <div class="ejemplo-row" id="ejTitulo" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('titulo')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejTituloTxt"></span></div>
+        <div class="ejemplo-row" id="ejTitulo" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('titulo')">↩ Usar ejemplo</button><span class="ejemplo-text" id="ejTituloTxt"></span></div>
       </div>
       <div class="form-group" style="grid-column:1/-1;display:none" id="grpArticulo">
-        <label>Art&#237;culo(s) citado(s)</label>
-        <textarea id="articulo" placeholder="ej. Art&#237;culo 1, Art&#237;culo 2 inciso 1, Art&#237;culo 44"></textarea>
-        <span style="font-size:11px;color:var(--text-hint);margin-top:3px">Se mostrar&#225; en las citas narrativa y parent&#233;tica.</span>
+        <label>Artículo(s) citado(s)</label>
+        <textarea id="articulo" placeholder="ej. Artículo 1, Artículo 2 inciso 1, Artículo 44"></textarea>
+        <span style="font-size:11px;color:var(--text-hint);margin-top:3px">Se mostrará en las citas narrativa y parentética.</span>
       </div>
       <div class="form-group" id="grpFecha">
-        <label>Fecha completa de publicaci&#243;n</label>
+        <label>Fecha completa de publicación</label>
         <div class="date-wrapper">
           <div class="date-input-row">
             <input type="text" id="fechaPublicacion" autocomplete="off"/>
-            <button class="btn-cal" id="btnCal" title="Abrir calendario">&#128197;</button>
+            <button class="btn-cal" id="btnCal" title="Abrir calendario">📅</button>
           </div>
           <div class="cal-popup" id="calPopup">
-            <div class="cal-header"><button class="cal-nav" id="calPrev">&#8249;</button><span id="calMonthLabel"></span><button class="cal-nav" id="calNext">&#8250;</button></div>
+            <div class="cal-header"><button class="cal-nav" id="calPrev">‹</button><span id="calMonthLabel"></span><button class="cal-nav" id="calNext">›</button></div>
             <div class="cal-grid" id="calGrid"></div>
           </div>
         </div>
-        <div class="ejemplo-row" id="ejFecha" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('fechaPublicacion')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejFechaTxt"></span></div>
+        <div class="ejemplo-row" id="ejFecha" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('fechaPublicacion')">↩ Usar ejemplo</button><span class="ejemplo-text" id="ejFechaTxt"></span></div>
       </div>
       <div class="form-group">
         <label>URL (SPIJ u otra fuente)</label>
         <input type="text" id="url" autocomplete="off"/>
-        <div class="ejemplo-row" id="ejUrl" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('url')">&#8617; Usar ejemplo</button><span class="ejemplo-text" id="ejUrlTxt"></span></div>
+        <div class="ejemplo-row" id="ejUrl" style="display:none"><button class="btn-ejemplo" onclick="usarEjemplo('url')">↩ Usar ejemplo</button><span class="ejemplo-text" id="ejUrlTxt"></span></div>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="dot" style="background:#0F6E56"></span> Referencia APA 7.&#170; edici&#243;n</div>
+    <div class="card-title"><span class="dot" style="background:#0F6E56"></span> Referencia APA 7.ª edición</div>
     <span class="preview-chip">Referencia completa</span>
-    <div class="ref-text" id="refCompleta"><span class="ref-placeholder">Completa los campos para ver la referencia generada&#8230;</span></div>
+    <div class="ref-text" id="refCompleta"><span class="ref-placeholder">Completa los campos para ver la referencia generada…</span></div>
     <div class="cita-grid">
-      <div class="cita-card"><span class="cita-chip">Cita narrativa</span><div class="cita-text" id="citaNarrativa">&#8212;</div></div>
-      <div class="cita-card"><span class="cita-chip">Cita parent&#233;tica</span><div class="cita-text" id="citaParentetica">&#8212;</div></div>
+      <div class="cita-card"><span class="cita-chip">Cita narrativa</span><div class="cita-text" id="citaNarrativa">—</div></div>
+      <div class="cita-card"><span class="cita-chip">Cita parentética</span><div class="cita-text" id="citaParentetica">—</div></div>
     </div>
     <div class="btn-row">
       <button class="btn btn-secondary" id="btnCopyAPA"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar referencia APA</button>
-      <span class="toast" id="toastAPA"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--success)"><polyline points="20 6 9 17 4 12"/></svg> &#161;Copiado!</span>
+      <span class="toast" id="toastAPA"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--success)"><polyline points="20 6 9 17 4 12"/></svg> ¡Copiado!</span>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="dot" style="background:#BA7517"></span> Vista previa &mdash; Formato RIS</div>
+    <div class="card-title"><span class="dot" style="background:#BA7517"></span> Vista previa — Formato RIS</div>
     <div class="ris-block" id="risPreview"></div>
     <div class="btn-row">
       <button class="btn btn-primary" id="btnDownloadRIS"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Descargar archivo .ris</button>
       <button class="btn btn-secondary" id="btnCopyRIS"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar RIS</button>
-      <span class="toast" id="toastRIS"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--success)"><polyline points="20 6 9 17 4 12"/></svg> &#161;Copiado!</span>
+      <span class="toast" id="toastRIS"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--success)"><polyline points="20 6 9 17 4 12"/></svg> ¡Copiado!</span>
     </div>
   </div>
 
@@ -264,174 +323,407 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--
       <tbody id="risTable"></tbody>
     </table>
   </div>
-  <div class="footer">Generado seg&#250;n la <strong>7.&#170; edici&#243;n del Manual de Estilo APA</strong> &middot; Idea de <strong>Antonio Lirio</strong><br>Compatible con Mendeley, Zotero, Endnote y EndNote</div>
+  <div class="footer">Generado según la <strong>7.ª edición del Manual de Estilo APA</strong> · Idea de <strong>Antonio Lirio</strong><br>Compatible con Mendeley, Zotero, Endnote y EndNote</div>
 </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════════
+     PESTAÑA 2: NORMAS MÁS CITADAS
+════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="panel-normas">
 <div class="nf-container">
-  <p class="nf-intro">Lista de normas legales peruanas m&#225;s citadas en investigaciones y tesis. Haz clic en una categor&#237;a para desplegar. Usa <strong>Usar en generador &#8599;</strong> para cargar los datos autom&#225;ticamente.</p>
+  <p class="nf-intro">Lista de normas legales peruanas más citadas en investigaciones y tesis. Haz clic en una categoría para desplegar. Usa <strong>Usar en generador ↗</strong> para cargar los datos automáticamente.</p>
   <div id="nfAccordion"></div>
-  <div class="footer">Generado seg&#250;n la <strong>7.&#170; edici&#243;n del Manual de Estilo APA</strong> &middot; Idea de <strong>Antonio Lirio</strong><br>Compatible con Mendeley, Zotero, Endnote y EndNote</div>
+  <div class="footer">Generado según la <strong>7.ª edición del Manual de Estilo APA</strong> · Idea de <strong>Antonio Lirio</strong><br>Compatible con Mendeley, Zotero, Endnote y EndNote</div>
 </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════════
+     PESTAÑA 3: TEMAS MÁS INVESTIGADOS
+════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-temas">
+<div class="temas-container">
+  <p class="temas-intro">
+    Normas legales peruanas organizadas por los <strong>17 temas más frecuentes</strong> en tesis de administración, gestión pública y ciencias sociales. 
+    Usa el buscador para filtrar por palabra clave, y descarga el <strong>.ris</strong> directamente o carga la norma al generador.
+  </p>
+
+  <!-- Buscador -->
+  <div class="buscador-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="buscadorTemas" placeholder="Buscar norma o tema… ej: SERVIR, CAS, salud, transparencia, presupuesto…" autocomplete="off"/>
+    <div class="search-resultados" id="searchResultados"></div>
+  </div>
+
+  <!-- Acordeón de temas -->
+  <div id="temasAccordion"></div>
+
+  <div class="footer">Generado según la <strong>7.ª edición del Manual de Estilo APA</strong> · Idea de <strong>Antonio Lirio</strong><br>Compatible con Mendeley, Zotero, Endnote y EndNote</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════════ -->
 <script>
+/* ─── DATOS: TIPOS DE NORMA ─── */
 const TIPOS={
-  constitucion:{label:'Constitucion',tieneNumero:false,risType:'STAT',
+  constitucion:{label:'Constitución',tieneNumero:false,risType:'STAT',
     ejCampos:{entidad:true,anio:true,titulo:true,fecha:true,url:true},
-    hintHTML:'<strong>Constituci\u00f3n:</strong> <code>Entidad. (A\u00f1o). <em>T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code><br>Ej.: <em>Congreso Constituyente Democr\u00e1tico. (1993). Constituci\u00f3n Pol\u00edtica del Per\u00fa de 1993. Diario Oficial El Peruano del 29 de diciembre de 1993.</em>',
-    ph:{entidad:'Congreso Constituyente Democr\u00e1tico',anio:'1993',titulo:'Constituci\u00f3n Pol\u00edtica del Per\u00fa de 1993',fecha:'29 de diciembre de 1993',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H682678',numero:''}},
+    hintHTML:'<strong>Constitución:</strong> <code>Entidad. (Año). <em>Título.</em> Diario Oficial El Peruano del fecha. URL</code><br>Ej.: <em>Congreso Constituyente Democrático. (1993). Constitución Política del Perú de 1993. Diario Oficial El Peruano del 29 de diciembre de 1993.</em>',
+    ph:{entidad:'Congreso Constituyente Democrático',anio:'1993',titulo:'Constitución Política del Perú de 1993',fecha:'29 de diciembre de 1993',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H682678',numero:''}},
   ley:{label:'Ley',tieneNumero:true,risType:'STAT',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Ley:</strong> <code>Entidad. (A\u00f1o). <em>Ley N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2014',numero:'30220',titulo:'Ley Universitaria',fecha:'9 de julio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1105565'}},
+    hintHTML:'<strong>Ley:</strong> <code>Entidad. (Año). <em>Ley N.° Número. Título.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Congreso de la República del Perú',anio:'2014',numero:'30220',titulo:'Ley Universitaria',fecha:'9 de julio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1105565'}},
   decreto_legislativo:{label:'Decreto Legislativo',tieneNumero:true,risType:'GOVDOC',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Decreto Legislativo:</strong> <code>Entidad. (A\u00f1o). <em>Decreto Legislativo N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2018',numero:'1407',titulo:'Decreto Legislativo que fortalece el Servicio de Defensa P\u00fablica',fecha:'12 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1215995'}},
+    hintHTML:'<strong>Decreto Legislativo:</strong> <code>Entidad. (Año). <em>Decreto Legislativo N.° Número. Título.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Presidencia de la República del Perú',anio:'2018',numero:'1407',titulo:'Decreto Legislativo que fortalece el Servicio de Defensa Pública',fecha:'12 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1215995'}},
   decreto_supremo:{label:'Decreto Supremo',tieneNumero:true,risType:'GOVDOC',
     ejCampos:{},
-    hintHTML:'<strong>Decreto Supremo:</strong> <code>Entidad. (A\u00f1o). <em>Decreto Supremo N.\u00b0 N\u00famero-A\u00f1o-SECTOR. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'ej. Ministerio de Educaci\u00f3n del Per\u00fa',anio:'',numero:'ej. 012-2021-MINEDU',titulo:'ej. T\u00edtulo del decreto supremo',fecha:'',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
-  codigo_civil:{label:'C\u00f3digo Civil',tieneNumero:false,risType:'STAT',
+    hintHTML:'<strong>Decreto Supremo:</strong> <code>Entidad. (Año). <em>Decreto Supremo N.° Número-Año-SECTOR. Título.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'ej. Ministerio de Educación del Perú',anio:'',numero:'ej. 012-2021-MINEDU',titulo:'ej. Título del decreto supremo',fecha:'',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  codigo_civil:{label:'Código Civil',tieneNumero:false,risType:'STAT',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>C\u00f3digo Civil:</strong> <code>Entidad. (A\u00f1o). <em>C\u00f3digo Civil.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'Poder Legislativo del Per\u00fa',anio:'1984',titulo:'C\u00f3digo Civil',fecha:'25 de julio de 1984',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H82408',numero:''}},
-  codigo_penal:{label:'C\u00f3digo Penal',tieneNumero:false,risType:'STAT',
+    hintHTML:'<strong>Código Civil:</strong> <code>Entidad. (Año). <em>Código Civil.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Poder Legislativo del Perú',anio:'1984',titulo:'Código Civil',fecha:'25 de julio de 1984',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H82408',numero:''}},
+  codigo_penal:{label:'Código Penal',tieneNumero:false,risType:'STAT',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>C\u00f3digo Penal:</strong> <code>Entidad. (A\u00f1o). <em>C\u00f3digo Penal.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'Poder Ejecutivo del Per\u00fa',anio:'1991',titulo:'C\u00f3digo Penal',fecha:'8 de abril de 1991',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H140133',numero:''}},
-  resolucion_ministerial:{label:'Resoluci\u00f3n Ministerial',tieneNumero:true,risType:'GOVDOC',
+    hintHTML:'<strong>Código Penal:</strong> <code>Entidad. (Año). <em>Código Penal.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Poder Ejecutivo del Perú',anio:'1991',titulo:'Código Penal',fecha:'8 de abril de 1991',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H140133',numero:''}},
+  resolucion_ministerial:{label:'Resolución Ministerial',tieneNumero:true,risType:'GOVDOC',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Resoluci\u00f3n Ministerial:</strong> <code>Entidad. (A\u00f1o). <em>Resoluci\u00f3n Ministerial N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2020',numero:'093-2020-MINEDU',titulo:'Orientaciones para la continuidad del servicio educativo en el marco de la emergencia sanitaria',fecha:'30 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
-  resolucion_legislativa:{label:'Resoluci\u00f3n Legislativa',tieneNumero:true,risType:'GOVDOC',
+    hintHTML:'<strong>Resolución Ministerial:</strong> <code>Entidad. (Año). <em>Resolución Ministerial N.° Número. Título.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Ministerio de Educación del Perú',anio:'2020',numero:'093-2020-MINEDU',titulo:'Orientaciones para la continuidad del servicio educativo en el marco de la emergencia sanitaria',fecha:'30 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  resolucion_legislativa:{label:'Resolución Legislativa',tieneNumero:true,risType:'GOVDOC',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Resoluci\u00f3n Legislativa:</strong> <code>Entidad. (A\u00f1o). <em>Resoluci\u00f3n Legislativa N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'31001',titulo:'ej. Resoluci\u00f3n Legislativa que aprueba...',fecha:'ej. 10 de noviembre de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
-  resolucion_tribunal_fiscal:{label:'Resoluci\u00f3n del Tribunal Fiscal',tieneNumero:true,risType:'CASE',
+    hintHTML:'<strong>Resolución Legislativa:</strong> <code>Entidad. (Año). <em>Resolución Legislativa N.° Número. Título.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Congreso de la República del Perú',anio:'2020',numero:'31001',titulo:'ej. Resolución Legislativa que aprueba...',fecha:'ej. 10 de noviembre de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  resolucion_tribunal_fiscal:{label:'Resolución del Tribunal Fiscal',tieneNumero:true,risType:'CASE',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Resoluci\u00f3n del Tribunal Fiscal:</strong> <code>Tribunal Fiscal del Per\u00fa. (A\u00f1o). <em>Resoluci\u00f3n del Tribunal Fiscal N.\u00b0 N\u00famero.</em> fecha. URL</code><br>No se publica en El Peruano; se cita la fecha de emisi\u00f3n.',
-    ph:{entidad:'Tribunal Fiscal del Per\u00fa',anio:'2022',numero:'03205-5-2022',titulo:'Resoluci\u00f3n del Tribunal Fiscal sobre deducci\u00f3n de gastos por servicios de asistencia t\u00e9cnica',fecha:'ej. 15 de abril de 2022',url:'https://www.mef.gob.pe/tribunal_fiscal/'}},
-  resolucion_directoral:{label:'Resoluci\u00f3n Directoral',tieneNumero:true,risType:'GOVDOC',
+    hintHTML:'<strong>Resolución del Tribunal Fiscal:</strong> <code>Tribunal Fiscal del Perú. (Año). <em>Resolución del Tribunal Fiscal N.° Número.</em> fecha. URL</code>',
+    ph:{entidad:'Tribunal Fiscal del Perú',anio:'2022',numero:'03205-5-2022',titulo:'Resolución del Tribunal Fiscal sobre deducción de gastos',fecha:'ej. 15 de abril de 2022',url:'https://www.mef.gob.pe/tribunal_fiscal/'}},
+  resolucion_directoral:{label:'Resolución Directoral',tieneNumero:true,risType:'GOVDOC',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Resoluci\u00f3n Directoral:</strong> <code>Entidad. (A\u00f1o). <em>Resoluci\u00f3n Directoral N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2020',numero:'00340-2020-MINEDU',titulo:'Norma que regula el proceso de evaluaci\u00f3n de los aprendizajes de los estudiantes de EBR',fecha:'3 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+    hintHTML:'<strong>Resolución Directoral:</strong> <code>Entidad. (Año). <em>Resolución Directoral N.° Número. Título.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Ministerio de Educación del Perú',anio:'2020',numero:'00340-2020-MINEDU',titulo:'Norma que regula el proceso de evaluación de los aprendizajes',fecha:'3 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
   acuerdo_municipal:{label:'Acuerdo Municipal',tieneNumero:true,risType:'GOVDOC',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Acuerdo Municipal:</strong> <code>Municipalidad. (A\u00f1o). <em>Acuerdo Municipal N.\u00b0 N\u00famero. T\u00edtulo.</em> fecha. URL</code>',
+    hintHTML:'<strong>Acuerdo Municipal:</strong> <code>Municipalidad. (Año). <em>Acuerdo Municipal N.° Número. Título.</em> fecha. URL</code>',
     ph:{entidad:'Municipalidad Provincial de Huaraz',anio:'2023',numero:'012-2023-MPH/CM',titulo:'Acuerdo que aprueba el Plan de Desarrollo Concertado del distrito',fecha:'ej. 20 de marzo de 2023',url:'https://www.munihuaraz.gob.pe/'}},
   ordenanza_municipal:{label:'Ordenanza Municipal',tieneNumero:true,risType:'GOVDOC',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Ordenanza Municipal:</strong> <code>Municipalidad. (A\u00f1o). <em>Ordenanza Municipal N.\u00b0 N\u00famero. T\u00edtulo.</em> Diario Oficial El Peruano del fecha. URL</code>',
-    ph:{entidad:'Municipalidad Metropolitana de Lima',anio:'2022',numero:'2281-MML',titulo:'Ordenanza que regula el uso de espacios p\u00fablicos en el centro hist\u00f3rico de Lima',fecha:'ej. 5 de julio de 2022',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
-  norma_tecnica:{label:'Norma T\u00e9cnica',tieneNumero:true,risType:'STAND',
+    hintHTML:'<strong>Ordenanza Municipal:</strong> <code>Municipalidad. (Año). <em>Ordenanza Municipal N.° Número. Título.</em> Diario Oficial El Peruano del fecha. URL</code>',
+    ph:{entidad:'Municipalidad Metropolitana de Lima',anio:'2022',numero:'2281-MML',titulo:'Ordenanza que regula el uso de espacios públicos',fecha:'ej. 5 de julio de 2022',url:'https://spij.minjus.gob.pe/spij-ext-web/'}},
+  norma_tecnica:{label:'Norma Técnica',tieneNumero:true,risType:'STAND',
     ejCampos:{entidad:true,anio:false,titulo:false,fecha:false,url:false},
-    hintHTML:'<strong>Norma T\u00e9cnica Peruana (NTP):</strong> <code>Entidad. (A\u00f1o). <em>C\u00f3digo NTP. T\u00edtulo.</em> URL</code><br>Emitidas por INACAL u otra entidad normalizadora.',
-    ph:{entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 9001:2015',titulo:'Sistemas de gesti\u00f3n de la calidad. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/'}},
+    hintHTML:'<strong>Norma Técnica Peruana (NTP):</strong> <code>Entidad. (Año). <em>Código NTP. Título.</em> URL</code>',
+    ph:{entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 9001:2015',titulo:'Sistemas de gestión de la calidad. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/'}},
 };
 
-const RIS_META={TY:'Tipo de referencia',AU:'Autor / Entidad emisora',PY:'A\u00f1o de publicaci\u00f3n',TI:'T\u00edtulo de la norma',PB:'Editor / Publicado en',CY:'Lugar de publicaci\u00f3n',DA:'Fecha completa',LA:'Idioma',UR:'URL de acceso',KW:'Palabra clave',ER:'Fin del registro'};
+const RIS_META={TY:'Tipo de referencia',AU:'Autor / Entidad emisora',PY:'Año de publicación',TI:'Título de la norma',PB:'Editor / Publicado en',CY:'Lugar de publicación',DA:'Fecha completa',LA:'Idioma',UR:'URL de acceso',KW:'Palabra clave',ER:'Fin del registro'};
 
+/* ─── DATOS: NORMAS FRECUENTES (Pestaña 2) ─── */
 const NORMAS_FRECUENTES=[
-  {grupo:'\u{1F4DC} Normas legales',icono:'\u{1F4DC}',seccion:'Leyes',tipo:'ley',normas:[
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2014',numero:'30220',titulo:'Ley Universitaria',fecha:'9 de julio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1105565',area:'Educaci\u00f3n superior'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2002',numero:'27806',titulo:'Ley de Transparencia y Acceso a la Informaci\u00f3n P\u00fablica',fecha:'3 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H95394',area:'Gesti\u00f3n p\u00fablica'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2013',numero:'30057',titulo:'Ley del Servicio Civil',fecha:'4 de julio de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1074568',area:'Recursos humanos'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'1997',numero:'26842',titulo:'Ley General de Salud',fecha:'20 de julio de 1997',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1843',area:'Salud'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2003',numero:'28044',titulo:'Ley General de Educaci\u00f3n',fecha:'29 de julio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H100208',area:'Educaci\u00f3n'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2001',numero:'27444',titulo:'Ley del Procedimiento Administrativo General',fecha:'11 de abril de 2001',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H72678',area:'Administraci\u00f3n p\u00fablica'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2004',numero:'28175',titulo:'Ley Marco del Empleo P\u00fablico',fecha:'19 de febrero de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Recursos humanos'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2011',numero:'29733',titulo:'Ley de Protecci\u00f3n de Datos Personales',fecha:'3 de julio de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H963840',area:'TI / Privacidad'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2011',numero:'29783',titulo:'Ley de Seguridad y Salud en el Trabajo',fecha:'20 de agosto de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Seguridad laboral'},
-    {entidad:'Congreso de la Rep\u00fablica del Per\u00fa',anio:'2000',numero:'27337',titulo:'C\u00f3digo de los Ni\u00f1os y Adolescentes',fecha:'7 de agosto de 2000',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Derecho familiar'},
+  {grupo:'📜 Normas legales',icono:'📜',seccion:'Leyes',tipo:'ley',normas:[
+    {entidad:'Congreso de la República del Perú',anio:'2014',numero:'30220',titulo:'Ley Universitaria',fecha:'9 de julio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1105565',area:'Educación superior'},
+    {entidad:'Congreso de la República del Perú',anio:'2002',numero:'27806',titulo:'Ley de Transparencia y Acceso a la Información Pública',fecha:'3 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H95394',area:'Gestión pública'},
+    {entidad:'Congreso de la República del Perú',anio:'2013',numero:'30057',titulo:'Ley del Servicio Civil',fecha:'4 de julio de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1074568',area:'Recursos humanos'},
+    {entidad:'Congreso de la República del Perú',anio:'1997',numero:'26842',titulo:'Ley General de Salud',fecha:'20 de julio de 1997',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1843',area:'Salud'},
+    {entidad:'Congreso de la República del Perú',anio:'2003',numero:'28044',titulo:'Ley General de Educación',fecha:'29 de julio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H100208',area:'Educación'},
+    {entidad:'Congreso de la República del Perú',anio:'2001',numero:'27444',titulo:'Ley del Procedimiento Administrativo General',fecha:'11 de abril de 2001',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H72678',area:'Administración pública'},
+    {entidad:'Congreso de la República del Perú',anio:'2004',numero:'28175',titulo:'Ley Marco del Empleo Público',fecha:'19 de febrero de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Recursos humanos'},
+    {entidad:'Congreso de la República del Perú',anio:'2011',numero:'29733',titulo:'Ley de Protección de Datos Personales',fecha:'3 de julio de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H963840',area:'TI / Privacidad'},
+    {entidad:'Congreso de la República del Perú',anio:'2011',numero:'29783',titulo:'Ley de Seguridad y Salud en el Trabajo',fecha:'20 de agosto de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Seguridad laboral'},
+    {entidad:'Congreso de la República del Perú',anio:'2000',numero:'27337',titulo:'Código de los Niños y Adolescentes',fecha:'7 de agosto de 2000',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Derecho familiar'},
   ]},
-  {grupo:'\u{1F4DC} Normas legales',icono:'\u{1F3DB}\uFE0F',seccion:'Decretos supremos',tipo:'decreto_supremo',normas:[
-    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2014',numero:'011-2014-MINEDU',titulo:'Reglamento de la Ley Universitaria N.\u00b0 30220',fecha:'11 de diciembre de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n superior'},
-    {entidad:'Ministerio de Trabajo y Promoci\u00f3n del Empleo del Per\u00fa',anio:'2005',numero:'009-2005-TR',titulo:'Reglamento de Seguridad y Salud en el Trabajo',fecha:'29 de septiembre de 2005',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Seguridad laboral'},
-    {entidad:'Presidencia del Consejo de Ministros del Per\u00fa',anio:'2003',numero:'043-2003-PCM',titulo:'Reglamento de la Ley de Transparencia y Acceso a la Informaci\u00f3n P\u00fablica',fecha:'22 de junio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Gesti\u00f3n p\u00fablica'},
-    {entidad:'Ministerio de Econom\u00eda y Finanzas del Per\u00fa',anio:'2012',numero:'304-2012-EF',titulo:'Reglamento de la Ley del Sistema Nacional de Presupuesto P\u00fablico',fecha:'21 de diciembre de 2012',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
-    {entidad:'Ministerio del Ambiente del Per\u00fa',anio:'2017',numero:'007-2017-MINAM',titulo:'Reglamento de gesti\u00f3n de residuos s\u00f3lidos de aparatos el\u00e9ctricos y electr\u00f3nicos',fecha:'26 de junio de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Medio ambiente'},
-    {entidad:'Presidencia del Consejo de Ministros del Per\u00fa',anio:'2018',numero:'029-2018-PCM',titulo:'Reglamento del Decreto Legislativo N.\u00b0 1310 \u2014 simplificaci\u00f3n administrativa',fecha:'20 de marzo de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Administraci\u00f3n p\u00fablica'},
-    {entidad:'Ministerio de Salud del Per\u00fa',anio:'2020',numero:'008-2020-SA',titulo:'Plan de Salud Mental Per\u00fa 2020\u20132021',fecha:'6 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud'},
-    {entidad:'Ministerio de Comercio Exterior y Turismo del Per\u00fa',anio:'2021',numero:'009-2021-MINCETUR',titulo:'Reglamento de Establecimientos de Hospedaje',fecha:'23 de junio de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
-    {entidad:'Presidencia del Consejo de Ministros del Per\u00fa',anio:'2021',numero:'162-2021-PCM',titulo:'Decreto que declara el Estado de Emergencia Nacional por la pandemia COVID-19',fecha:'30 de septiembre de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud p\u00fablica'},
-    {entidad:'Ministerio de Econom\u00eda y Finanzas del Per\u00fa',anio:'2016',numero:'215-2016-EF',titulo:'Reglamento de la Ley N.\u00b0 30372 \u2014 Ley de Presupuesto del Sector P\u00fablico',fecha:'24 de agosto de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
+  {grupo:'📜 Normas legales',icono:'🏛️',seccion:'Decretos supremos',tipo:'decreto_supremo',normas:[
+    {entidad:'Ministerio de Educación del Perú',anio:'2014',numero:'011-2014-MINEDU',titulo:'Reglamento de la Ley Universitaria N.° 30220',fecha:'11 de diciembre de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educación superior'},
+    {entidad:'Ministerio de Trabajo y Promoción del Empleo del Perú',anio:'2005',numero:'009-2005-TR',titulo:'Reglamento de Seguridad y Salud en el Trabajo',fecha:'29 de septiembre de 2005',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Seguridad laboral'},
+    {entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2003',numero:'043-2003-PCM',titulo:'Reglamento de la Ley de Transparencia y Acceso a la Información Pública',fecha:'22 de junio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Gestión pública'},
+    {entidad:'Ministerio de Economía y Finanzas del Perú',anio:'2012',numero:'304-2012-EF',titulo:'Reglamento de la Ley del Sistema Nacional de Presupuesto Público',fecha:'21 de diciembre de 2012',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas públicas'},
+    {entidad:'Ministerio del Ambiente del Perú',anio:'2017',numero:'007-2017-MINAM',titulo:'Reglamento de gestión de residuos sólidos de aparatos eléctricos y electrónicos',fecha:'26 de junio de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Medio ambiente'},
+    {entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2018',numero:'029-2018-PCM',titulo:'Reglamento del Decreto Legislativo N.° 1310 — simplificación administrativa',fecha:'20 de marzo de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Administración pública'},
+    {entidad:'Ministerio de Salud del Perú',anio:'2020',numero:'008-2020-SA',titulo:'Plan de Salud Mental Perú 2020–2021',fecha:'6 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud'},
+    {entidad:'Ministerio de Comercio Exterior y Turismo del Perú',anio:'2021',numero:'009-2021-MINCETUR',titulo:'Reglamento de Establecimientos de Hospedaje',fecha:'23 de junio de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
+    {entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2013',numero:'004-2013-PCM',titulo:'Política Nacional de Modernización de la Gestión Pública al 2021',fecha:'9 de enero de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Modernización del Estado'},
+    {entidad:'Ministerio de Economía y Finanzas del Perú',anio:'2016',numero:'215-2016-EF',titulo:'Reglamento de la Ley N.° 30372 — Ley de Presupuesto del Sector Público',fecha:'24 de agosto de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas públicas'},
   ]},
-  {grupo:'\u{1F4DC} Normas legales',icono:'\u2696\uFE0F',seccion:'Decretos legislativos',tipo:'decreto_legislativo',normas:[
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2008',numero:'1057',titulo:'Decreto Legislativo que regula el R\u00e9gimen Especial de Contrataci\u00f3n Administrativa de Servicios (CAS)',fecha:'28 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Recursos humanos'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2018',numero:'1407',titulo:'Decreto Legislativo que fortalece el Servicio de Defensa P\u00fablica',fecha:'12 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1215995',area:'Justicia'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2008',numero:'1017',titulo:'Decreto Legislativo que aprueba la Ley de Contrataciones del Estado',fecha:'4 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Contrataciones'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2016',numero:'1310',titulo:'Decreto Legislativo que aprueba medidas adicionales de simplificaci\u00f3n administrativa',fecha:'30 de diciembre de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Administraci\u00f3n p\u00fablica'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2017',numero:'1352',titulo:'Decreto Legislativo que ampl\u00eda la responsabilidad administrativa de las personas jur\u00eddicas',fecha:'7 de enero de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Anticorrupci\u00f3n'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'1991',numero:'757',titulo:'Decreto Legislativo \u2014 Ley Marco para el Crecimiento de la Inversi\u00f3n Privada',fecha:'13 de noviembre de 1991',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Inversi\u00f3n privada'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2018',numero:'1440',titulo:'Decreto Legislativo del Sistema Nacional de Presupuesto P\u00fablico',fecha:'16 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2018',numero:'1401',titulo:'Decreto Legislativo que establece el r\u00e9gimen de protecci\u00f3n de datos de fuentes period\u00edsticas',fecha:'9 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Comunicaciones'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2004',numero:'953',titulo:'Decreto Legislativo que modifica el C\u00f3digo Tributario',fecha:'5 de febrero de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Tributario'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'1996',numero:'823',titulo:'Decreto Legislativo sobre la Ley de Propiedad Industrial',fecha:'24 de abril de 1996',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Propiedad intelectual'},
+  {grupo:'📜 Normas legales',icono:'⚖️',seccion:'Decretos legislativos',tipo:'decreto_legislativo',normas:[
+    {entidad:'Presidencia de la República del Perú',anio:'2008',numero:'1057',titulo:'Decreto Legislativo que regula el Régimen Especial de Contratación Administrativa de Servicios (CAS)',fecha:'28 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Recursos humanos'},
+    {entidad:'Presidencia de la República del Perú',anio:'2008',numero:'1023',titulo:'Decreto Legislativo que crea la Autoridad Nacional del Servicio Civil — SERVIR',fecha:'21 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Recursos humanos'},
+    {entidad:'Presidencia de la República del Perú',anio:'2008',numero:'1024',titulo:'Decreto Legislativo que crea y regula el Cuerpo de Gerentes Públicos',fecha:'21 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Recursos humanos'},
+    {entidad:'Presidencia de la República del Perú',anio:'2008',numero:'1017',titulo:'Decreto Legislativo que aprueba la Ley de Contrataciones del Estado',fecha:'4 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Contrataciones'},
+    {entidad:'Presidencia de la República del Perú',anio:'2016',numero:'1310',titulo:'Decreto Legislativo que aprueba medidas adicionales de simplificación administrativa',fecha:'30 de diciembre de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Administración pública'},
+    {entidad:'Presidencia de la República del Perú',anio:'2017',numero:'1352',titulo:'Decreto Legislativo que amplía la responsabilidad administrativa de las personas jurídicas',fecha:'7 de enero de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Anticorrupción'},
+    {entidad:'Presidencia de la República del Perú',anio:'1991',numero:'757',titulo:'Decreto Legislativo — Ley Marco para el Crecimiento de la Inversión Privada',fecha:'13 de noviembre de 1991',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Inversión privada'},
+    {entidad:'Presidencia de la República del Perú',anio:'2018',numero:'1440',titulo:'Decreto Legislativo del Sistema Nacional de Presupuesto Público',fecha:'16 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas públicas'},
+    {entidad:'Presidencia de la República del Perú',anio:'2004',numero:'953',titulo:'Decreto Legislativo que modifica el Código Tributario',fecha:'5 de febrero de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Tributario'},
+    {entidad:'Presidencia de la República del Perú',anio:'1996',numero:'823',titulo:'Decreto Legislativo sobre la Ley de Propiedad Industrial',fecha:'24 de abril de 1996',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Propiedad intelectual'},
   ]},
-  {grupo:'\u{1F4DC} Normas legales',icono:'\u{1F6A8}',seccion:'Decretos de urgencia',tipo:'decreto_supremo',normas:[
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'026-2020',titulo:'Decreto de Urgencia que establece medidas excepcionales para prevenir la propagaci\u00f3n del COVID-19',fecha:'15 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud p\u00fablica'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'027-2020',titulo:'Decreto de Urgencia que establece el trabajo remoto',fecha:'23 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral / TIC'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'044-2020',titulo:'Decreto de Urgencia que declara el Estado de Emergencia Nacional',fecha:'16 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud p\u00fablica'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'090-2020',titulo:'Decreto de Urgencia que autoriza el retiro extraordinario de la CTS',fecha:'7 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2019',numero:'006-2019',titulo:'Decreto de Urgencia que establece medidas urgentes para promover la econom\u00eda formal',fecha:'18 de agosto de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Econom\u00eda'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2020',numero:'070-2020',titulo:'Decreto de Urgencia que establece medidas complementarias para mitigar efectos econ\u00f3micos del COVID-19',fecha:'23 de junio de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Econom\u00eda'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2021',numero:'020-2021',titulo:'Decreto de Urgencia que establece el marco normativo para el impulso de proyectos de inversi\u00f3n',fecha:'11 de marzo de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Inversi\u00f3n p\u00fablica'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2021',numero:'037-2021',titulo:'Decreto de Urgencia que aprueba medidas adicionales para vacunaci\u00f3n contra COVID-19',fecha:'25 de mayo de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud p\u00fablica'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2022',numero:'012-2022',titulo:'Decreto de Urgencia que establece medidas para garantizar liquidez en hogares y empresas',fecha:'20 de febrero de 2022',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas'},
-    {entidad:'Presidencia de la Rep\u00fablica del Per\u00fa',anio:'2019',numero:'014-2019',titulo:'Decreto de Urgencia para garantizar la integridad de los procesos electorales',fecha:'30 de septiembre de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Gobernanza'},
+  {grupo:'📄 Resoluciones',icono:'📄',seccion:'Resoluciones ministeriales',tipo:'resolucion_ministerial',normas:[
+    {entidad:'Ministerio de Educación del Perú',anio:'2020',numero:'093-2020-MINEDU',titulo:'Orientaciones para la continuidad del servicio educativo en el marco de la emergencia sanitaria',fecha:'30 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educación'},
+    {entidad:'Ministerio de Salud del Perú',anio:'2020',numero:'186-2020/MINSA',titulo:'Guía Técnica para el cuidado de la salud mental de la población afectada por COVID-19',fecha:'8 de abril de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud mental'},
+    {entidad:'Ministerio de Trabajo y Promoción del Empleo del Perú',anio:'2016',numero:'107-2016-TR',titulo:'Guía para la aplicación del principio de igualdad y no discriminación en el empleo',fecha:'18 de junio de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral'},
+    {entidad:'Ministerio de Economía y Finanzas del Perú',anio:'2020',numero:'0014-2020-EF/15',titulo:'Directiva de Programación Multianual 2021–2023',fecha:'10 de enero de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas públicas'},
+    {entidad:'Ministerio de Comercio Exterior y Turismo del Perú',anio:'2019',numero:'0065-2019-MINCETUR',titulo:'Plan Estratégico Nacional de Turismo 2025',fecha:'14 de marzo de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
+    {entidad:'Ministerio de Trabajo y Promoción del Empleo del Perú',anio:'2018',numero:'176-2018-TR',titulo:'Aprueban el Protocolo de Actuación Sectorial en casos de hostigamiento sexual',fecha:'28 de junio de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral / Género'},
+    {entidad:'Ministerio del Ambiente del Perú',anio:'2020',numero:'073-2020-MINAM',titulo:'Aprueban Política Nacional del Ambiente al 2030',fecha:'30 de octubre de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Medio ambiente'},
+    {entidad:'Ministerio de Educación del Perú',anio:'2021',numero:'531-2021-MINEDU',titulo:'Disposiciones para la calificación del mérito de docentes en carrera pública',fecha:'30 de octubre de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educación'},
+    {entidad:'Ministerio de la Producción del Perú',anio:'2021',numero:'091-2021-PRODUCE',titulo:'Plan Nacional de Diversificación Productiva',fecha:'24 de mayo de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Industria'},
+    {entidad:'Ministerio de Desarrollo Agrario y Riego del Perú',anio:'2021',numero:'0246-2021-MIDAGRI',titulo:'Plan de Gestión de Riesgos y Adaptación al Cambio Climático en el Sector Agrario',fecha:'30 de junio de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Agro / Clima'},
   ]},
-  {grupo:'\u{1F4C4} Resoluciones',icono:'\u{1F4C4}',seccion:'Resoluciones ministeriales',tipo:'resolucion_ministerial',normas:[
-    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2020',numero:'093-2020-MINEDU',titulo:'Orientaciones para la continuidad del servicio educativo en el marco de la emergencia sanitaria',fecha:'30 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n'},
-    {entidad:'Ministerio de Salud del Per\u00fa',anio:'2020',numero:'186-2020/MINSA',titulo:'Gu\u00eda T\u00e9cnica para el cuidado de la salud mental de la poblaci\u00f3n afectada por COVID-19',fecha:'8 de abril de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Salud mental'},
-    {entidad:'Ministerio de Trabajo y Promoci\u00f3n del Empleo del Per\u00fa',anio:'2016',numero:'107-2016-TR',titulo:'Gu\u00eda para la aplicaci\u00f3n del principio de igualdad y no discriminaci\u00f3n en el empleo',fecha:'18 de junio de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral'},
-    {entidad:'Ministerio de Econom\u00eda y Finanzas del Per\u00fa',anio:'2020',numero:'0014-2020-EF/15',titulo:'Directiva de Programaci\u00f3n Multianual 2021\u20132023',fecha:'10 de enero de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
-    {entidad:'Ministerio de Comercio Exterior y Turismo del Per\u00fa',anio:'2019',numero:'0065-2019-MINCETUR',titulo:'Plan Estrat\u00e9gico Nacional de Turismo 2025',fecha:'14 de marzo de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
-    {entidad:'Ministerio de Trabajo y Promoci\u00f3n del Empleo del Per\u00fa',anio:'2018',numero:'176-2018-TR',titulo:'Aprueban el Protocolo de Actuaci\u00f3n Sectorial en casos de hostigamiento sexual',fecha:'28 de junio de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral / G\u00e9nero'},
-    {entidad:'Ministerio del Ambiente del Per\u00fa',anio:'2020',numero:'073-2020-MINAM',titulo:'Aprueban Pol\u00edtica Nacional del Ambiente al 2030',fecha:'30 de octubre de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Medio ambiente'},
-    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2021',numero:'531-2021-MINEDU',titulo:'Disposiciones para la calificaci\u00f3n del m\u00e9rito de docentes en carrera p\u00fablica',fecha:'30 de octubre de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n'},
-    {entidad:'Ministerio de la Producci\u00f3n del Per\u00fa',anio:'2021',numero:'091-2021-PRODUCE',titulo:'Plan Nacional de Diversificaci\u00f3n Productiva',fecha:'24 de mayo de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Industria'},
-    {entidad:'Ministerio de Desarrollo Agrario y Riego del Per\u00fa',anio:'2021',numero:'0246-2021-MIDAGRI',titulo:'Plan de Gesti\u00f3n de Riesgos y Adaptaci\u00f3n al Cambio Clim\u00e1tico en el Sector Agrario',fecha:'30 de junio de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Agro / Clima'},
+  {grupo:'📄 Resoluciones',icono:'📂',seccion:'Resoluciones directorales',tipo:'resolucion_directoral',normas:[
+    {entidad:'Ministerio de Educación del Perú',anio:'2020',numero:'00340-2020-MINEDU',titulo:'Norma que regula el proceso de evaluación de los aprendizajes de los estudiantes de Educación Básica Regular',fecha:'3 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educación básica'},
+    {entidad:'Ministerio de Educación del Perú',anio:'2021',numero:'00098-2021-MINEDU',titulo:'Disposiciones para la prestación del servicio educativo en el año escolar 2021',fecha:'12 de febrero de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educación'},
+    {entidad:'Superintendencia Nacional de Educación Superior Universitaria (SUNEDU)',anio:'2020',numero:'039-2020-SUNEDU/CD',titulo:'Resolución del Consejo Directivo que modifica el Reglamento del Procedimiento de Licenciamiento',fecha:'28 de febrero de 2020',url:'https://www.sunedu.gob.pe/',area:'Educación superior'},
+    {entidad:'Ministerio de Trabajo y Promoción del Empleo del Perú',anio:'2017',numero:'018-2017-MTPE/2',titulo:'Directiva de normas para la verificación del cumplimiento de obligaciones laborales',fecha:'3 de agosto de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral'},
+    {entidad:'Ministerio de Economía y Finanzas del Perú',anio:'2019',numero:'001-2019-EF/50.01',titulo:'Directiva para la programación y formulación anual del presupuesto del sector público',fecha:'8 de enero de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas públicas'},
+    {entidad:'Ministerio del Ambiente del Perú',anio:'2020',numero:'003-2020-MINAM/DGPML',titulo:'Lineamientos para la implementación de la estrategia nacional ante el cambio climático',fecha:'20 de febrero de 2020',url:'https://www.minam.gob.pe/',area:'Medio ambiente'},
+    {entidad:'Ministerio de Salud del Perú',anio:'2018',numero:'078-2018/MINSA',titulo:'Protocolo de atención de emergencias obstétricas en establecimientos de salud',fecha:'8 de agosto de 2018',url:'https://www.minsa.gob.pe/',area:'Salud'},
+    {entidad:'Ministerio de Comercio Exterior y Turismo del Perú',anio:'2018',numero:'0006-2018-MINCETUR',titulo:'Normas técnicas complementarias para el establecimiento de hospedaje',fecha:'18 de enero de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
   ]},
-  {grupo:'\u{1F4C4} Resoluciones',icono:'\u{1F4C2}',seccion:'Resoluciones directorales',tipo:'resolucion_directoral',normas:[
-    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2020',numero:'00340-2020-MINEDU',titulo:'Norma que regula el proceso de evaluaci\u00f3n de los aprendizajes de los estudiantes de Educaci\u00f3n B\u00e1sica Regular',fecha:'3 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n b\u00e1sica'},
-    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2021',numero:'00098-2021-MINEDU',titulo:'Disposiciones para la prestaci\u00f3n del servicio educativo en el a\u00f1o escolar 2021',fecha:'12 de febrero de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n'},
-    {entidad:'Superintendencia Nacional de Educaci\u00f3n Superior Universitaria (SUNEDU)',anio:'2020',numero:'039-2020-SUNEDU/CD',titulo:'Resoluci\u00f3n del Consejo Directivo que modifica el Reglamento del Procedimiento de Licenciamiento',fecha:'28 de febrero de 2020',url:'https://www.sunedu.gob.pe/',area:'Educaci\u00f3n superior'},
-    {entidad:'Direcci\u00f3n General de Salud Ambiental (DIGESA)',anio:'2019',numero:'001-2019-DIGESA',titulo:'Protocolo nacional de vigilancia de la calidad del agua para consumo humano',fecha:'15 de enero de 2019',url:'https://www.digesa.minsa.gob.pe/',area:'Salud ambiental'},
-    {entidad:'Ministerio de Trabajo y Promoci\u00f3n del Empleo del Per\u00fa',anio:'2017',numero:'018-2017-MTPE/2',titulo:'Directiva de normas para la verificaci\u00f3n del cumplimiento de obligaciones laborales',fecha:'3 de agosto de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Laboral'},
-    {entidad:'Ministerio de Econom\u00eda y Finanzas del Per\u00fa',anio:'2019',numero:'001-2019-EF/50.01',titulo:'Directiva para la programaci\u00f3n y formulaci\u00f3n anual del presupuesto del sector p\u00fablico',fecha:'8 de enero de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Finanzas p\u00fablicas'},
-    {entidad:'Ministerio del Ambiente del Per\u00fa',anio:'2020',numero:'003-2020-MINAM/DGPML',titulo:'Lineamientos para la implementaci\u00f3n de la estrategia nacional ante el cambio clim\u00e1tico',fecha:'20 de febrero de 2020',url:'https://www.minam.gob.pe/',area:'Medio ambiente'},
-    {entidad:'Ministerio de Educaci\u00f3n del Per\u00fa',anio:'2022',numero:'00025-2022-MINEDU',titulo:'Orientaciones pedag\u00f3gicas para el desarrollo del a\u00f1o escolar 2022',fecha:'20 de enero de 2022',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Educaci\u00f3n'},
-    {entidad:'Ministerio de Salud del Per\u00fa',anio:'2018',numero:'078-2018/MINSA',titulo:'Protocolo de atenci\u00f3n de emergencias obst\u00e9tricas en establecimientos de salud',fecha:'8 de agosto de 2018',url:'https://www.minsa.gob.pe/',area:'Salud'},
-    {entidad:'Ministerio de Comercio Exterior y Turismo del Per\u00fa',anio:'2018',numero:'0006-2018-MINCETUR',titulo:'Normas t\u00e9cnicas complementarias para el establecimiento de hospedaje',fecha:'18 de enero de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',area:'Turismo'},
-  ]},
-  {grupo:'\u{1F3D9}\uFE0F Acuerdos, Ordenanzas y Normas T\u00e9cnicas',icono:'\u{1F52C}',seccion:'Normas t\u00e9cnicas (NTP / INACAL)',tipo:'norma_tecnica',normas:[
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 9001:2015',titulo:'Sistemas de gesti\u00f3n de la calidad. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Calidad'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 14001:2015',titulo:'Sistemas de gesti\u00f3n ambiental. Requisitos con orientaci\u00f3n para su uso',fecha:'',url:'https://www.inacal.gob.pe/',area:'Medio ambiente'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 45001:2018',titulo:'Sistemas de gesti\u00f3n de la seguridad y salud en el trabajo. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Seguridad y salud'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2013',numero:'NTP-ISO/IEC 27001:2013',titulo:'Tecnolog\u00eda de la informaci\u00f3n. T\u00e9cnicas de seguridad. Sistemas de gesti\u00f3n de la seguridad de la informaci\u00f3n',fecha:'',url:'https://www.inacal.gob.pe/',area:'Seguridad inform\u00e1tica'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2017',numero:'NTP-ISO 37001:2017',titulo:'Sistemas de gesti\u00f3n antisoborno. Requisitos con orientaci\u00f3n para su uso',fecha:'',url:'https://www.inacal.gob.pe/',area:'Anticorrupci\u00f3n'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 22000:2018',titulo:'Sistemas de gesti\u00f3n de la inocuidad de los alimentos. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Inocuidad alimentaria'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 31000:2018',titulo:'Gesti\u00f3n del riesgo. Directrices',fecha:'',url:'https://www.inacal.gob.pe/',area:'Gesti\u00f3n de riesgos'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2010',numero:'NTP-ISO 26000:2010',titulo:'Gu\u00eda de responsabilidad social',fecha:'',url:'https://www.inacal.gob.pe/',area:'RSE'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP 399.010-1:2015',titulo:'Se\u00f1ales de seguridad. Colores, s\u00edmbolos, formas y dimensiones de se\u00f1ales de seguridad',fecha:'',url:'https://www.inacal.gob.pe/',area:'Seguridad industrial'},
-    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2017',numero:'NTP-ISO/IEC 17025:2017',titulo:'Requisitos generales para la competencia de los laboratorios de ensayo y calibraci\u00f3n',fecha:'',url:'https://www.inacal.gob.pe/',area:'Metrolog\u00eda / Laboratorios'},
+  {grupo:'🏙️ Acuerdos, Ordenanzas y Normas Técnicas',icono:'🔬',seccion:'Normas técnicas (NTP / INACAL)',tipo:'norma_tecnica',normas:[
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 9001:2015',titulo:'Sistemas de gestión de la calidad. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Calidad'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',numero:'NTP-ISO 14001:2015',titulo:'Sistemas de gestión ambiental. Requisitos con orientación para su uso',fecha:'',url:'https://www.inacal.gob.pe/',area:'Medio ambiente'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 45001:2018',titulo:'Sistemas de gestión de la seguridad y salud en el trabajo. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Seguridad y salud'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2013',numero:'NTP-ISO/IEC 27001:2013',titulo:'Tecnología de la información. Técnicas de seguridad. Sistemas de gestión de la seguridad de la información',fecha:'',url:'https://www.inacal.gob.pe/',area:'Seguridad informática'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2017',numero:'NTP-ISO 37001:2017',titulo:'Sistemas de gestión antisoborno. Requisitos con orientación para su uso',fecha:'',url:'https://www.inacal.gob.pe/',area:'Anticorrupción'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 22000:2018',titulo:'Sistemas de gestión de la inocuidad de los alimentos. Requisitos',fecha:'',url:'https://www.inacal.gob.pe/',area:'Inocuidad alimentaria'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',numero:'NTP-ISO 31000:2018',titulo:'Gestión del riesgo. Directrices',fecha:'',url:'https://www.inacal.gob.pe/',area:'Gestión de riesgos'},
+    {entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2010',numero:'NTP-ISO 26000:2010',titulo:'Guía de responsabilidad social',fecha:'',url:'https://www.inacal.gob.pe/',area:'RSE'},
   ]},
 ];
 
-let tipoActivo='constitucion';
+/* ─── DATOS: TEMAS MÁS INVESTIGADOS (Pestaña 3) ─── */
+const TEMAS=[
+  {
+    id:'rrhh', icono:'👥', titulo:'Recursos Humanos',
+    subtitulo:'Gestión del talento, empleo público y relaciones laborales',
+    normas:[
+      {codigo:'Ley 30057',tipo:'ley',numero:'30057',titulo:'Ley del Servicio Civil',entidad:'Congreso de la República del Perú',anio:'2013',fecha:'4 de julio de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1074568',tags:['SERVIR','empleo público']},
+      {codigo:'Ley 28175',tipo:'ley',numero:'28175',titulo:'Ley Marco del Empleo Público',entidad:'Congreso de la República del Perú',anio:'2004',fecha:'19 de febrero de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['empleo público','carrera']},
+      {codigo:'Ley 27444',tipo:'ley',numero:'27444',titulo:'Ley del Procedimiento Administrativo General',entidad:'Congreso de la República del Perú',anio:'2001',fecha:'11 de abril de 2001',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H72678',tags:['administración','procedimiento']},
+      {codigo:'Ley 27815',tipo:'ley',numero:'27815',titulo:'Código de Ética de la Función Pública',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'13 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['ética','función pública']},
+      {codigo:'Ley 29783',tipo:'ley',numero:'29783',titulo:'Ley de Seguridad y Salud en el Trabajo',entidad:'Congreso de la República del Perú',anio:'2011',fecha:'20 de agosto de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SST','seguridad laboral']},
+      {codigo:'D.Leg. 1023',tipo:'decreto_legislativo',numero:'1023',titulo:'Decreto Legislativo que crea la Autoridad Nacional del Servicio Civil — SERVIR',entidad:'Presidencia de la República del Perú',anio:'2008',fecha:'21 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SERVIR','servicio civil']},
+      {codigo:'D.Leg. 1024',tipo:'decreto_legislativo',numero:'1024',titulo:'Decreto Legislativo que crea y regula el Cuerpo de Gerentes Públicos',entidad:'Presidencia de la República del Perú',anio:'2008',fecha:'21 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['gerentes públicos','SERVIR']},
+      {codigo:'D.Leg. 1057',tipo:'decreto_legislativo',numero:'1057',titulo:'Decreto Legislativo que regula el Régimen Especial de Contratación Administrativa de Servicios (CAS)',entidad:'Presidencia de la República del Perú',anio:'2008',fecha:'28 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['CAS','contratación']},
+      {codigo:'D.S. 040-2014-PCM',tipo:'decreto_supremo',numero:'040-2014-PCM',titulo:'Reglamento General de la Ley del Servicio Civil',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2014',fecha:'13 de junio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SERVIR','servicio civil','reglamento']},
+      {codigo:'D.S. 005-2012-TR',tipo:'decreto_supremo',numero:'005-2012-TR',titulo:'Reglamento de la Ley de Seguridad y Salud en el Trabajo',entidad:'Ministerio de Trabajo y Promoción del Empleo del Perú',anio:'2012',fecha:'25 de abril de 2012',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SST','seguridad laboral','reglamento']},
+      {codigo:'D.S. 004-2013-PCM',tipo:'decreto_supremo',numero:'004-2013-PCM',titulo:'Política Nacional de Modernización de la Gestión Pública al 2021',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2013',fecha:'9 de enero de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['modernización','gestión pública']},
+      {codigo:'Res. SERVIR',tipo:'resolucion_directoral',numero:'',titulo:'Norma Técnica de Competencias del Servidor Público — Resoluciones de Presidencia Ejecutiva de SERVIR',entidad:'Autoridad Nacional del Servicio Civil (SERVIR)',anio:'2016',fecha:'',url:'https://www.servir.gob.pe/',tags:['SERVIR','competencias','evaluación']},
+    ]
+  },
+  {
+    id:'rendimiento', icono:'📈', titulo:'Rendimiento laboral',
+    subtitulo:'Evaluación, desempeño y productividad del servidor público',
+    normas:[
+      {codigo:'Ley 30057',tipo:'ley',numero:'30057',titulo:'Ley del Servicio Civil',entidad:'Congreso de la República del Perú',anio:'2013',fecha:'4 de julio de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1074568',tags:['evaluación','desempeño']},
+      {codigo:'D.S. 040-2014-PCM',tipo:'decreto_supremo',numero:'040-2014-PCM',titulo:'Reglamento General de la Ley del Servicio Civil (evaluación del desempeño)',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2014',fecha:'13 de junio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['evaluación','rendimiento','SERVIR']},
+      {codigo:'Ley 27815',tipo:'ley',numero:'27815',titulo:'Código de Ética de la Función Pública',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'13 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['ética','conducta','rendimiento']},
+      {codigo:'D.Leg. 1023',tipo:'decreto_legislativo',numero:'1023',titulo:'Decreto Legislativo que crea SERVIR — rectoría del sistema de recursos humanos',entidad:'Presidencia de la República del Perú',anio:'2008',fecha:'21 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SERVIR','sistema de RR. HH.']},
+      {codigo:'Ley 29783',tipo:'ley',numero:'29783',titulo:'Ley de Seguridad y Salud en el Trabajo — condiciones que afectan el rendimiento',entidad:'Congreso de la República del Perú',anio:'2011',fecha:'20 de agosto de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SST','bienestar laboral']},
+      {codigo:'D.S. 004-2013-PCM',tipo:'decreto_supremo',numero:'004-2013-PCM',titulo:'Política Nacional de Modernización — gestión por resultados',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2013',fecha:'9 de enero de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['resultados','modernización']},
+    ]
+  },
+  {
+    id:'calidad', icono:'⭐', titulo:'Calidad de servicio',
+    subtitulo:'Estándares, satisfacción del usuario y mejora continua',
+    normas:[
+      {codigo:'NTP-ISO 9001:2015',tipo:'norma_tecnica',numero:'NTP-ISO 9001:2015',titulo:'Sistemas de gestión de la calidad. Requisitos',entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',fecha:'',url:'https://www.inacal.gob.pe/',tags:['ISO 9001','calidad','SGC']},
+      {codigo:'Ley 27444',tipo:'ley',numero:'27444',titulo:'Ley del Procedimiento Administrativo General — simplificación y calidad de atención',entidad:'Congreso de la República del Perú',anio:'2001',fecha:'11 de abril de 2001',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['atención al ciudadano','simplificación']},
+      {codigo:'D.S. 004-2013-PCM',tipo:'decreto_supremo',numero:'004-2013-PCM',titulo:'Política Nacional de Modernización de la Gestión Pública — orientación al ciudadano',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2013',fecha:'9 de enero de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['ciudadano','modernización','calidad']},
+      {codigo:'D.Leg. 1310',tipo:'decreto_legislativo',numero:'1310',titulo:'Decreto Legislativo que aprueba medidas adicionales de simplificación administrativa',entidad:'Presidencia de la República del Perú',anio:'2016',fecha:'30 de diciembre de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['simplificación','trámites']},
+      {codigo:'NTP-ISO 26000:2010',tipo:'norma_tecnica',numero:'NTP-ISO 26000:2010',titulo:'Guía de responsabilidad social',entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2010',fecha:'',url:'https://www.inacal.gob.pe/',tags:['RSE','responsabilidad social']},
+      {codigo:'Ley 27658',tipo:'ley',numero:'27658',titulo:'Ley Marco de Modernización de la Gestión del Estado',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'30 de enero de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['modernización','Estado','gestión']},
+    ]
+  },
+  {
+    id:'salud', icono:'🏥', titulo:'Salud',
+    subtitulo:'Sistema de salud, EsSalud, salud pública y normativa sanitaria',
+    normas:[
+      {codigo:'Ley 26842',tipo:'ley',numero:'26842',titulo:'Ley General de Salud',entidad:'Congreso de la República del Perú',anio:'1997',fecha:'20 de julio de 1997',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1843',tags:['salud pública','MINSA']},
+      {codigo:'Ley 29344',tipo:'ley',numero:'29344',titulo:'Ley Marco de Aseguramiento Universal en Salud',entidad:'Congreso de la República del Perú',anio:'2009',fecha:'9 de abril de 2009',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['aseguramiento universal','SIS','EsSalud']},
+      {codigo:'Ley 27657',tipo:'ley',numero:'27657',titulo:'Ley del Ministerio de Salud',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'29 de enero de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['MINSA','organización']},
+      {codigo:'D.S. 008-2020-SA',tipo:'decreto_supremo',numero:'008-2020-SA',titulo:'Plan de Salud Mental Perú 2020–2021',entidad:'Ministerio de Salud del Perú',anio:'2020',fecha:'6 de marzo de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['salud mental','MINSA']},
+      {codigo:'NTP-ISO 45001:2018',tipo:'norma_tecnica',numero:'NTP-ISO 45001:2018',titulo:'Sistemas de gestión de la seguridad y salud en el trabajo. Requisitos',entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',fecha:'',url:'https://www.inacal.gob.pe/',tags:['SST','ISO 45001']},
+      {codigo:'Ley 29783',tipo:'ley',numero:'29783',titulo:'Ley de Seguridad y Salud en el Trabajo',entidad:'Congreso de la República del Perú',anio:'2011',fecha:'20 de agosto de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SST','salud ocupacional']},
+      {codigo:'R.M. 186-2020/MINSA',tipo:'resolucion_ministerial',numero:'186-2020/MINSA',titulo:'Guía Técnica para el cuidado de la salud mental de la población afectada por COVID-19',entidad:'Ministerio de Salud del Perú',anio:'2020',fecha:'8 de abril de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['COVID-19','salud mental']},
+    ]
+  },
+  {
+    id:'transdigital', icono:'💻', titulo:'Transformación digital',
+    subtitulo:'Gobierno digital, TIC, interoperabilidad y datos abiertos',
+    normas:[
+      {codigo:'D.Leg. 1412',tipo:'decreto_legislativo',numero:'1412',titulo:'Decreto Legislativo que aprueba la Ley de Gobierno Digital',entidad:'Presidencia de la República del Perú',anio:'2018',fecha:'13 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['gobierno digital','TIC','ONGEI']},
+      {codigo:'D.S. 029-2021-PCM',tipo:'decreto_supremo',numero:'029-2021-PCM',titulo:'Reglamento de la Ley de Gobierno Digital',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2021',fecha:'14 de febrero de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['gobierno digital','reglamento','ONGEI']},
+      {codigo:'Ley 29733',tipo:'ley',numero:'29733',titulo:'Ley de Protección de Datos Personales',entidad:'Congreso de la República del Perú',anio:'2011',fecha:'3 de julio de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H963840',tags:['datos personales','privacidad']},
+      {codigo:'D.Leg. 1310',tipo:'decreto_legislativo',numero:'1310',titulo:'Decreto Legislativo de simplificación administrativa — digitalización de trámites',entidad:'Presidencia de la República del Perú',anio:'2016',fecha:'30 de diciembre de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['digitalización','simplificación','trámites']},
+      {codigo:'NTP-ISO/IEC 27001:2013',tipo:'norma_tecnica',numero:'NTP-ISO/IEC 27001:2013',titulo:'Sistemas de gestión de la seguridad de la información',entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2013',fecha:'',url:'https://www.inacal.gob.pe/',tags:['ciberseguridad','seguridad informática','ISO 27001']},
+      {codigo:'D.U. 006-2020',tipo:'decreto_supremo',numero:'006-2020',titulo:'Decreto de Urgencia que establece medidas para garantizar la continuidad de los servicios digitales',entidad:'Presidencia de la República del Perú',anio:'2020',fecha:'23 de enero de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['servicios digitales','plataformas']},
+      {codigo:'D.S. 004-2019-JUS',tipo:'decreto_supremo',numero:'004-2019-JUS',titulo:'Texto Único Ordenado de la Ley N.° 27444 — procedimientos electrónicos',entidad:'Ministerio de Justicia y Derechos Humanos del Perú',anio:'2019',fecha:'25 de enero de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['procedimiento electrónico','TUO','digital']},
+    ]
+  },
+  {
+    id:'modernizacion', icono:'🏗️', titulo:'Modernización de la gestión pública',
+    subtitulo:'Reforma del Estado, simplificación administrativa y eficiencia',
+    normas:[
+      {codigo:'D.S. 004-2013-PCM',tipo:'decreto_supremo',numero:'004-2013-PCM',titulo:'Política Nacional de Modernización de la Gestión Pública al 2021',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2013',fecha:'9 de enero de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['modernización','gestión por resultados']},
+      {codigo:'Ley 27658',tipo:'ley',numero:'27658',titulo:'Ley Marco de Modernización de la Gestión del Estado',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'30 de enero de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['modernización','eficiencia del Estado']},
+      {codigo:'D.Leg. 1310',tipo:'decreto_legislativo',numero:'1310',titulo:'Decreto Legislativo que aprueba medidas adicionales de simplificación administrativa',entidad:'Presidencia de la República del Perú',anio:'2016',fecha:'30 de diciembre de 2016',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['simplificación','trámites','modernización']},
+      {codigo:'D.Leg. 1412',tipo:'decreto_legislativo',numero:'1412',titulo:'Ley de Gobierno Digital',entidad:'Presidencia de la República del Perú',anio:'2018',fecha:'13 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['gobierno digital','modernización']},
+      {codigo:'Ley 27444',tipo:'ley',numero:'27444',titulo:'Ley del Procedimiento Administrativo General',entidad:'Congreso de la República del Perú',anio:'2001',fecha:'11 de abril de 2001',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['procedimiento','administración','modernización']},
+      {codigo:'D.S. 029-2018-PCM',tipo:'decreto_supremo',numero:'029-2018-PCM',titulo:'Reglamento del Sistema Administrativo de Modernización de la Gestión Pública',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2018',fecha:'20 de marzo de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['sistema administrativo','CEPLAN','modernización']},
+    ]
+  },
+  {
+    id:'planificacion', icono:'🗺️', titulo:'Planificación estratégica',
+    subtitulo:'CEPLAN, planes nacionales, estratégicos e institucionales',
+    normas:[
+      {codigo:'D.Leg. 1088',tipo:'decreto_legislativo',numero:'1088',titulo:'Ley del Sistema Nacional de Planeamiento Estratégico y del CEPLAN',entidad:'Presidencia de la República del Perú',anio:'2008',fecha:'28 de junio de 2008',url:'https://www.ceplan.gob.pe/',tags:['CEPLAN','planeamiento estratégico']},
+      {codigo:'D.S. 054-2011-PCM',tipo:'decreto_supremo',numero:'054-2011-PCM',titulo:'Plan Estratégico de Desarrollo Nacional al 2021 — Plan Bicentenario',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2011',fecha:'22 de junio de 2011',url:'https://www.ceplan.gob.pe/',tags:['Plan Bicentenario','desarrollo nacional','CEPLAN']},
+      {codigo:'D.S. 004-2013-PCM',tipo:'decreto_supremo',numero:'004-2013-PCM',titulo:'Política Nacional de Modernización de la Gestión Pública — gestión por resultados',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2013',fecha:'9 de enero de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['resultados','modernización','planificación']},
+      {codigo:'Ley 28411',tipo:'ley',numero:'28411',titulo:'Ley General del Sistema Nacional de Presupuesto',entidad:'Congreso de la República del Perú',anio:'2004',fecha:'8 de diciembre de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['presupuesto','planeamiento','PEI','PIA']},
+      {codigo:'D.U. 020-2021',tipo:'decreto_supremo',numero:'020-2021',titulo:'Decreto de Urgencia que establece marco para el impulso de proyectos de inversión',entidad:'Presidencia de la República del Perú',anio:'2021',fecha:'11 de marzo de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['inversión pública','planificación']},
+      {codigo:'Directiva CEPLAN',tipo:'resolucion_directoral',numero:'',titulo:'Directiva para la Formulación y Actualización del Plan Estratégico Institucional (PEI) y el Plan Operativo Institucional (POI)',entidad:'Centro Nacional de Planeamiento Estratégico (CEPLAN)',anio:'2019',fecha:'',url:'https://www.ceplan.gob.pe/',tags:['PEI','POI','CEPLAN','planificación institucional']},
+    ]
+  },
+  {
+    id:'politicas', icono:'📋', titulo:'Políticas públicas',
+    subtitulo:'Diseño, implementación y evaluación de políticas del Estado',
+    normas:[
+      {codigo:'D.S. 029-2018-PCM',tipo:'decreto_supremo',numero:'029-2018-PCM',titulo:'Reglamento del Sistema Administrativo de Modernización — políticas nacionales',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2018',fecha:'20 de marzo de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['políticas nacionales','rectoría']},
+      {codigo:'D.S. 004-2013-PCM',tipo:'decreto_supremo',numero:'004-2013-PCM',titulo:'Política Nacional de Modernización de la Gestión Pública al 2021',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2013',fecha:'9 de enero de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['política pública','modernización']},
+      {codigo:'Ley 29158',tipo:'ley',numero:'29158',titulo:'Ley Orgánica del Poder Ejecutivo',entidad:'Congreso de la República del Perú',anio:'2007',fecha:'20 de diciembre de 2007',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['Poder Ejecutivo','políticas','rectoría']},
+      {codigo:'Ley 27658',tipo:'ley',numero:'27658',titulo:'Ley Marco de Modernización de la Gestión del Estado',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'30 de enero de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['Estado','gestión pública']},
+      {codigo:'D.Leg. 1088',tipo:'decreto_legislativo',numero:'1088',titulo:'Ley del Sistema Nacional de Planeamiento Estratégico y del CEPLAN — marco de políticas',entidad:'Presidencia de la República del Perú',anio:'2008',fecha:'28 de junio de 2008',url:'https://www.ceplan.gob.pe/',tags:['CEPLAN','políticas','planeamiento']},
+    ]
+  },
+  {
+    id:'gobernanza', icono:'⚖️', titulo:'Gobernanza y gobernabilidad',
+    subtitulo:'Buen gobierno, transparencia, participación ciudadana',
+    normas:[
+      {codigo:'Ley 27806',tipo:'ley',numero:'27806',titulo:'Ley de Transparencia y Acceso a la Información Pública',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'3 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H95394',tags:['transparencia','acceso a información']},
+      {codigo:'Ley 26300',tipo:'ley',numero:'26300',titulo:'Ley de los Derechos de Participación y Control Ciudadanos',entidad:'Congreso de la República del Perú',anio:'1994',fecha:'3 de mayo de 1994',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['participación ciudadana','control','referéndum']},
+      {codigo:'Ley 27815',tipo:'ley',numero:'27815',titulo:'Código de Ética de la Función Pública',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'13 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['ética','función pública','buen gobierno']},
+      {codigo:'Ley 28716',tipo:'ley',numero:'28716',titulo:'Ley de Control Interno de las Entidades del Estado',entidad:'Congreso de la República del Perú',anio:'2006',fecha:'18 de abril de 2006',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['control interno','contraloría','SCI']},
+      {codigo:'D.S. 043-2003-PCM',tipo:'decreto_supremo',numero:'043-2003-PCM',titulo:'Reglamento de la Ley de Transparencia y Acceso a la Información Pública',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2003',fecha:'22 de junio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['transparencia','reglamento','información pública']},
+      {codigo:'Ley 29792',tipo:'ley',numero:'29792',titulo:'Ley de Creación del Ministerio de Desarrollo e Inclusión Social',entidad:'Congreso de la República del Perú',anio:'2011',fecha:'20 de octubre de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['MIDIS','inclusión','gobernanza']},
+    ]
+  },
+  {
+    id:'programas', icono:'🤝', titulo:'Programas sociales',
+    subtitulo:'Inclusión social, lucha contra la pobreza y protección social',
+    normas:[
+      {codigo:'Ley 29792',tipo:'ley',numero:'29792',titulo:'Ley de Creación del Ministerio de Desarrollo e Inclusión Social',entidad:'Congreso de la República del Perú',anio:'2011',fecha:'20 de octubre de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['MIDIS','Juntos','Pensión 65','inclusión']},
+      {codigo:'D.S. 008-2016-MIDIS',tipo:'decreto_supremo',numero:'008-2016-MIDIS',titulo:'Lineamientos para la gestión articulada intersectorial e intergubernamental orientada a la reducción de la anemia',entidad:'Ministerio de Desarrollo e Inclusión Social del Perú',anio:'2016',fecha:'31 de mayo de 2016',url:'https://www.midis.gob.pe/',tags:['anemia','intersectorial','nutrición']},
+      {codigo:'Ley 30364',tipo:'ley',numero:'30364',titulo:'Ley para Prevenir, Sancionar y Erradicar la Violencia contra las Mujeres y los Integrantes del Grupo Familiar',entidad:'Congreso de la República del Perú',anio:'2015',fecha:'23 de noviembre de 2015',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['violencia','género','protección social']},
+      {codigo:'Ley 28036',tipo:'ley',numero:'28036',titulo:'Ley de Promoción y Desarrollo del Deporte',entidad:'Congreso de la República del Perú',anio:'2003',fecha:'25 de julio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['deporte','social']},
+      {codigo:'D.Leg. 1425',tipo:'decreto_legislativo',numero:'1425',titulo:'Decreto Legislativo que modifica la Ley N.° 30364 para fortalecer la asistencia a víctimas',entidad:'Presidencia de la República del Perú',anio:'2018',fecha:'13 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['violencia','protección','género']},
+    ]
+  },
+  {
+    id:'educacion', icono:'🎓', titulo:'Gestión educativa',
+    subtitulo:'Educación básica, superior, SUNEDU y calidad educativa',
+    normas:[
+      {codigo:'Ley 28044',tipo:'ley',numero:'28044',titulo:'Ley General de Educación',entidad:'Congreso de la República del Perú',anio:'2003',fecha:'29 de julio de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H100208',tags:['educación básica','MINEDU']},
+      {codigo:'Ley 30220',tipo:'ley',numero:'30220',titulo:'Ley Universitaria',entidad:'Congreso de la República del Perú',anio:'2014',fecha:'9 de julio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/#/detallenorma/H1105565',tags:['universidades','SUNEDU','educación superior']},
+      {codigo:'D.S. 011-2014-MINEDU',tipo:'decreto_supremo',numero:'011-2014-MINEDU',titulo:'Reglamento de la Ley Universitaria N.° 30220',entidad:'Ministerio de Educación del Perú',anio:'2014',fecha:'11 de diciembre de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SUNEDU','reglamento','universidades']},
+      {codigo:'R.D. 039-2020-SUNEDU/CD',tipo:'resolucion_directoral',numero:'039-2020-SUNEDU/CD',titulo:'Resolución del Consejo Directivo que modifica el Reglamento del Procedimiento de Licenciamiento Institucional',entidad:'Superintendencia Nacional de Educación Superior Universitaria (SUNEDU)',anio:'2020',fecha:'28 de febrero de 2020',url:'https://www.sunedu.gob.pe/',tags:['licenciamiento','SUNEDU','acreditación']},
+      {codigo:'R.M. 531-2021-MINEDU',tipo:'resolucion_ministerial',numero:'531-2021-MINEDU',titulo:'Disposiciones para la calificación del mérito de docentes en carrera pública magisterial',entidad:'Ministerio de Educación del Perú',anio:'2021',fecha:'30 de octubre de 2021',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['docentes','carrera magisterial']},
+      {codigo:'R.D. 00340-2020-MINEDU',tipo:'resolucion_directoral',numero:'00340-2020-MINEDU',titulo:'Norma que regula el proceso de evaluación de los aprendizajes de los estudiantes de EBR',entidad:'Ministerio de Educación del Perú',anio:'2020',fecha:'3 de agosto de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['evaluación','aprendizajes','EBR']},
+    ]
+  },
+  {
+    id:'contrataciones', icono:'📑', titulo:'Contrataciones del Estado',
+    subtitulo:'Adquisiciones, licitaciones, OSCE y control del gasto',
+    normas:[
+      {codigo:'D.Leg. 1017',tipo:'decreto_legislativo',numero:'1017',titulo:'Decreto Legislativo que aprueba la Ley de Contrataciones del Estado',entidad:'Presidencia de la República del Perú',anio:'2008',fecha:'4 de junio de 2008',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['OSCE','licitación','adquisiciones']},
+      {codigo:'Ley 30225',tipo:'ley',numero:'30225',titulo:'Ley de Contrataciones del Estado (modificatoria vigente)',entidad:'Congreso de la República del Perú',anio:'2014',fecha:'11 de julio de 2014',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['OSCE','contrataciones','licitación','concurso']},
+      {codigo:'D.S. 344-2018-EF',tipo:'decreto_supremo',numero:'344-2018-EF',titulo:'Reglamento de la Ley de Contrataciones del Estado N.° 30225',entidad:'Ministerio de Economía y Finanzas del Perú',anio:'2018',fecha:'31 de diciembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['reglamento','OSCE','contrataciones']},
+      {codigo:'Ley 27444',tipo:'ley',numero:'27444',titulo:'Ley del Procedimiento Administrativo General — aplicable en procesos de contratación',entidad:'Congreso de la República del Perú',anio:'2001',fecha:'11 de abril de 2001',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['procedimiento administrativo','contrataciones']},
+      {codigo:'Ley 28716',tipo:'ley',numero:'28716',titulo:'Ley de Control Interno de las Entidades del Estado',entidad:'Congreso de la República del Perú',anio:'2006',fecha:'18 de abril de 2006',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['control interno','contraloría','gasto']},
+      {codigo:'D.Leg. 1352',tipo:'decreto_legislativo',numero:'1352',titulo:'Decreto Legislativo que amplía la responsabilidad administrativa de las personas jurídicas',entidad:'Presidencia de la República del Perú',anio:'2017',fecha:'7 de enero de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['anticorrupción','integridad','contrataciones']},
+    ]
+  },
+  {
+    id:'descentralizacion', icono:'🏘️', titulo:'Descentralización y gobiernos locales',
+    subtitulo:'Regiones, municipalidades, autonomía y transferencias',
+    normas:[
+      {codigo:'Ley 27867',tipo:'ley',numero:'27867',titulo:'Ley Orgánica de Gobiernos Regionales',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'18 de noviembre de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['gobierno regional','descentralización']},
+      {codigo:'Ley 27972',tipo:'ley',numero:'27972',titulo:'Ley Orgánica de Municipalidades',entidad:'Congreso de la República del Perú',anio:'2003',fecha:'27 de mayo de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['municipalidades','gobierno local','alcalde']},
+      {codigo:'Ley 27783',tipo:'ley',numero:'27783',titulo:'Ley de Bases de la Descentralización',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'20 de julio de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['descentralización','competencias','territorios']},
+      {codigo:'Ley 28056',tipo:'ley',numero:'28056',titulo:'Ley Marco del Presupuesto Participativo',entidad:'Congreso de la República del Perú',anio:'2003',fecha:'8 de agosto de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['presupuesto participativo','municipalidades','ciudadanía']},
+      {codigo:'Ley 27444',tipo:'ley',numero:'27444',titulo:'Ley del Procedimiento Administrativo General — aplicable a entidades locales',entidad:'Congreso de la República del Perú',anio:'2001',fecha:'11 de abril de 2001',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['procedimiento','municipalidades','administración']},
+      {codigo:'D.S. 004-2013-PCM',tipo:'decreto_supremo',numero:'004-2013-PCM',titulo:'Política Nacional de Modernización — articulación multinivel',entidad:'Presidencia del Consejo de Ministros del Perú',anio:'2013',fecha:'9 de enero de 2013',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['articulación','modernización','gobiernos locales']},
+    ]
+  },
+  {
+    id:'etica', icono:'🛡️', titulo:'Ética y lucha contra la corrupción',
+    subtitulo:'Integridad pública, control interno y sanciones',
+    normas:[
+      {codigo:'Ley 27815',tipo:'ley',numero:'27815',titulo:'Código de Ética de la Función Pública',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'13 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['ética','función pública','deberes']},
+      {codigo:'Ley 28716',tipo:'ley',numero:'28716',titulo:'Ley de Control Interno de las Entidades del Estado',entidad:'Congreso de la República del Perú',anio:'2006',fecha:'18 de abril de 2006',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['control interno','SCI','contraloría']},
+      {codigo:'D.Leg. 1352',tipo:'decreto_legislativo',numero:'1352',titulo:'Decreto Legislativo que amplía la responsabilidad administrativa de las personas jurídicas',entidad:'Presidencia de la República del Perú',anio:'2017',fecha:'7 de enero de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['anticorrupción','compliance','personas jurídicas']},
+      {codigo:'NTP-ISO 37001:2017',tipo:'norma_tecnica',numero:'NTP-ISO 37001:2017',titulo:'Sistemas de gestión antisoborno. Requisitos con orientación para su uso',entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2017',fecha:'',url:'https://www.inacal.gob.pe/',tags:['antisoborno','ISO 37001','compliance']},
+      {codigo:'Ley 27806',tipo:'ley',numero:'27806',titulo:'Ley de Transparencia y Acceso a la Información Pública',entidad:'Congreso de la República del Perú',anio:'2002',fecha:'3 de agosto de 2002',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['transparencia','acceso a información','anticorrupción']},
+      {codigo:'Ley 30737',tipo:'ley',numero:'30737',titulo:'Ley que asegura el pago inmediato de la reparación civil a favor del Estado en casos de corrupción',entidad:'Congreso de la República del Perú',anio:'2018',fecha:'12 de marzo de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['reparación civil','corrupción','Odebrecht']},
+    ]
+  },
+  {
+    id:'presupuesto', icono:'💰', titulo:'Presupuesto público',
+    subtitulo:'Finanzas públicas, PIA, PIM, programas presupuestales',
+    normas:[
+      {codigo:'Ley 28411',tipo:'ley',numero:'28411',titulo:'Ley General del Sistema Nacional de Presupuesto',entidad:'Congreso de la República del Perú',anio:'2004',fecha:'8 de diciembre de 2004',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['presupuesto','PIA','PIM','PEI']},
+      {codigo:'D.Leg. 1440',tipo:'decreto_legislativo',numero:'1440',titulo:'Decreto Legislativo del Sistema Nacional de Presupuesto Público',entidad:'Presidencia de la República del Perú',anio:'2018',fecha:'16 de septiembre de 2018',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['presupuesto','SIAF','MEF']},
+      {codigo:'D.S. 304-2012-EF',tipo:'decreto_supremo',numero:'304-2012-EF',titulo:'Texto Único Ordenado de la Ley General del Sistema Nacional de Presupuesto',entidad:'Ministerio de Economía y Finanzas del Perú',anio:'2012',fecha:'21 de diciembre de 2012',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['TUO presupuesto','MEF','finanzas públicas']},
+      {codigo:'D.U. 014-2019-EF',tipo:'decreto_supremo',numero:'014-2019-EF',titulo:'Decreto de Urgencia de Medidas Extraordinarias en Materia Económica y Financiera',entidad:'Ministerio de Economía y Finanzas del Perú',anio:'2019',fecha:'',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['austeridad','gasto público']},
+      {codigo:'Ley 28056',tipo:'ley',numero:'28056',titulo:'Ley Marco del Presupuesto Participativo',entidad:'Congreso de la República del Perú',anio:'2003',fecha:'8 de agosto de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['presupuesto participativo','gobiernos locales']},
+      {codigo:'R.D. 001-2019-EF/50.01',tipo:'resolucion_directoral',numero:'001-2019-EF/50.01',titulo:'Directiva para la programación y formulación anual del presupuesto del sector público con una perspectiva de resultados',entidad:'Ministerio de Economía y Finanzas del Perú',anio:'2019',fecha:'8 de enero de 2019',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['PpR','presupuesto por resultados','MEF']},
+    ]
+  },
+  {
+    id:'medioambiente', icono:'🌿', titulo:'Gestión ambiental y riesgos',
+    subtitulo:'MINAM, cambio climático, riesgos de desastres y ISO ambiental',
+    normas:[
+      {codigo:'Ley 28611',tipo:'ley',numero:'28611',titulo:'Ley General del Ambiente',entidad:'Congreso de la República del Perú',anio:'2005',fecha:'15 de octubre de 2005',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['medio ambiente','MINAM','EIA']},
+      {codigo:'Ley 29664',tipo:'ley',numero:'29664',titulo:'Ley que crea el Sistema Nacional de Gestión del Riesgo de Desastres (SINAGERD)',entidad:'Congreso de la República del Perú',anio:'2011',fecha:'19 de febrero de 2011',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SINAGERD','desastres','riesgos','INDECI']},
+      {codigo:'NTP-ISO 14001:2015',tipo:'norma_tecnica',numero:'NTP-ISO 14001:2015',titulo:'Sistemas de gestión ambiental. Requisitos con orientación para su uso',entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2015',fecha:'',url:'https://www.inacal.gob.pe/',tags:['ISO 14001','SGA','ambiente']},
+      {codigo:'NTP-ISO 31000:2018',tipo:'norma_tecnica',numero:'NTP-ISO 31000:2018',titulo:'Gestión del riesgo. Directrices',entidad:'Instituto Nacional de Calidad (INACAL)',anio:'2018',fecha:'',url:'https://www.inacal.gob.pe/',tags:['gestión de riesgos','ISO 31000']},
+      {codigo:'D.S. 007-2017-MINAM',tipo:'decreto_supremo',numero:'007-2017-MINAM',titulo:'Reglamento de gestión de residuos sólidos de aparatos eléctricos y electrónicos',entidad:'Ministerio del Ambiente del Perú',anio:'2017',fecha:'26 de junio de 2017',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['residuos sólidos','RAEE','MINAM']},
+      {codigo:'R.M. 073-2020-MINAM',tipo:'resolucion_ministerial',numero:'073-2020-MINAM',titulo:'Aprueban Política Nacional del Ambiente al 2030',entidad:'Ministerio del Ambiente del Perú',anio:'2020',fecha:'30 de octubre de 2020',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['política ambiental','MINAM 2030']},
+    ]
+  },
+  {
+    id:'seguridad', icono:'🚔', titulo:'Seguridad ciudadana',
+    subtitulo:'SINASEC, PNP, serenazgo y convivencia social',
+    normas:[
+      {codigo:'Ley 27933',tipo:'ley',numero:'27933',titulo:'Ley del Sistema Nacional de Seguridad Ciudadana (SINASEC)',entidad:'Congreso de la República del Perú',anio:'2003',fecha:'12 de febrero de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SINASEC','seguridad ciudadana','PNP']},
+      {codigo:'Ley 27972',tipo:'ley',numero:'27972',titulo:'Ley Orgánica de Municipalidades — competencias en seguridad ciudadana',entidad:'Congreso de la República del Perú',anio:'2003',fecha:'27 de mayo de 2003',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['municipalidades','serenazgo','seguridad local']},
+      {codigo:'D.S. 011-2014-IN',tipo:'decreto_supremo',numero:'011-2014-IN',titulo:'Reglamento de la Ley del Sistema Nacional de Seguridad Ciudadana',entidad:'Ministerio del Interior del Perú',anio:'2014',fecha:'',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['SINASEC','reglamento','CODISEC']},
+      {codigo:'Ley 30364',tipo:'ley',numero:'30364',titulo:'Ley para Prevenir, Sancionar y Erradicar la Violencia contra las Mujeres',entidad:'Congreso de la República del Perú',anio:'2015',fecha:'23 de noviembre de 2015',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['violencia','género','seguridad']},
+      {codigo:'Plan Nacional de Seguridad Ciudadana',tipo:'decreto_supremo',numero:'',titulo:'Plan Nacional de Seguridad Ciudadana 2019–2023',entidad:'Consejo Nacional de Seguridad Ciudadana (CONASEC)',anio:'2019',fecha:'',url:'https://www.mininter.gob.pe/',tags:['PNSC','CONASEC','plan nacional']},
+      {codigo:'Ley 27238',tipo:'ley',numero:'27238',titulo:'Ley Orgánica de la Policía Nacional del Perú',entidad:'Congreso de la República del Perú',anio:'1999',fecha:'22 de diciembre de 1999',url:'https://spij.minjus.gob.pe/spij-ext-web/',tags:['PNP','policía','seguridad']},
+    ]
+  },
+];
+
+/* ─── HELPERS ─── */
 const $=id=>document.getElementById(id);
 const v=id=>{const e=$(id);return e?e.value.trim():''};
 const eh=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
+/* ─── TABS ─── */
 document.querySelectorAll('.main-tab').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.main-tab').forEach(x=>x.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));
   b.classList.add('active');$('panel-'+b.dataset.panel).classList.add('active');
 }));
 
+/* ─── GENERADOR: tipos ─── */
+let tipoActivo='constitucion';
 document.querySelectorAll('.tipo-tabs').forEach(c=>c.addEventListener('click',e=>{
   const b=e.target.closest('.tipo-btn');if(!b)return;
   document.querySelectorAll('.tipo-btn').forEach(x=>x.classList.remove('active'));
@@ -441,7 +733,7 @@ document.querySelectorAll('.tipo-tabs').forEach(c=>c.addEventListener('click',e=
 function applyPH(tipo){
   const t=TIPOS[tipo],ph=t.ph,ej=t.ejCampos;
   $('entidad').placeholder='ej. '+ph.entidad;
-  $('titulo').placeholder=ph.titulo?'ej. '+ph.titulo:'Ingrese el t\u00edtulo de la norma';
+  $('titulo').placeholder=ph.titulo?'ej. '+ph.titulo:'Ingrese el título de la norma';
   $('fechaPublicacion').placeholder=ph.fecha?'ej. '+ph.fecha:'ej. 15 de enero de 2020';
   $('url').placeholder=ph.url||'https://spij.minjus.gob.pe/...';
   $('hintBox').innerHTML=t.hintHTML;
@@ -466,6 +758,7 @@ function usarEjemplo(fId){
   if(map[fId]){el.value=map[fId];update();}
 }
 
+/* ─── CALENDARIO ─── */
 const MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 const DIA=['Do','Lu','Ma','Mi','Ju','Vi','Sa'];
 let calDate=new Date();
@@ -487,13 +780,20 @@ $('calNext').addEventListener('click',()=>{calDate.setMonth(calDate.getMonth()+1
 $('calGrid').addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(!b)return;$('fechaPublicacion').value=`${b.dataset.d} de ${MES[+b.dataset.m]} de ${b.dataset.y}`;$('calPopup').classList.remove('open');update();});
 document.addEventListener('click',e=>{if(!$('calPopup').contains(e.target)&&e.target!==$('btnCal'))$('calPopup').classList.remove('open');});
 
-function bldTitle(tipo,num,tit){const t=TIPOS[tipo];if(!t.tieneNumero)return tit||'[T\u00edtulo de la norma]';return t.label+' '+(num||'[N.\u00b0]')+'. '+(tit||'[T\u00edtulo]');}
-
-function bldRIS(){
-  const t=TIPOS[tipoActivo],ent=v('entidad')||'[Entidad]',yr=v('anio')||'[A\u00f1o]',num=v('numero'),tit=v('titulo')||'[T\u00edtulo]',fec=v('fechaPublicacion'),url=v('url');
-  const L=[['TY',t.risType],['AU',ent],['PY',yr],['TI',bldTitle(tipoActivo,num,tit)],['PB','Diario Oficial El Peruano'],['CY','Lima, Per\u00fa'],['LA','Espa\u00f1ol']];
+/* ─── GENERADOR: REFERENCIA ─── */
+function bldTitle(tipo,num,tit){const t=TIPOS[tipo];if(!t.tieneNumero)return tit||'[Título de la norma]';return t.label+' '+(num||'[N.°]')+'. '+(tit||'[Título]');}
+function bldRIS(tipoK,dataN){
+  const tipo=tipoK||tipoActivo;
+  const t=TIPOS[tipo];
+  const ent=(dataN&&dataN.entidad)||v('entidad')||'[Entidad]';
+  const yr=(dataN&&dataN.anio)||v('anio')||'[Año]';
+  const num=(dataN&&dataN.numero)||v('numero');
+  const tit=(dataN&&dataN.titulo)||v('titulo')||'[Título]';
+  const fec=(dataN&&dataN.fecha)||v('fechaPublicacion');
+  const url=(dataN&&dataN.url)||v('url');
+  const L=[['TY',t.risType],['AU',ent],['PY',yr],['TI',bldTitle(tipo,num,tit)],['PB','Diario Oficial El Peruano'],['CY','Lima, Perú'],['LA','Español']];
   if(fec)L.push(['DA',fec]);if(url)L.push(['UR',url]);
-  L.push(['KW',t.label],['KW','Per\u00fa'],['KW','norma legal'],['ER','']);return L;
+  L.push(['KW',t.label],['KW','Perú'],['KW','norma legal'],['ER','']);return L;
 }
 function renderRISH(L){return L.map(([k,va])=>{if(k==='ER')return`<span class="ris-er">ER</span><span class="ris-sep">  - </span>`;const c=k==='KW'?'ris-kw':'ris-val';return`<span class="ris-tag">${k}</span><span class="ris-sep">  - </span><span class="${c}">${eh(va)}</span>`;}).join('\n');}
 function renderRIST(L){return L.map(([k,va])=>k==='ER'?'ER  -':`${k}  - ${va}`).join('\r\n');}
@@ -501,30 +801,27 @@ function renderRISTbl(L){
   const tb=$('risTable');tb.innerHTML='';
   L.forEach(([k,va])=>{const tr=document.createElement('tr');tr.innerHTML=`<td style="padding:7px 10px;border-bottom:1px solid var(--border);font-family:monospace;color:var(--accent);font-weight:700">${k}</td><td style="padding:7px 10px;border-bottom:1px solid var(--border);color:var(--text-muted)">${RIS_META[k]||''}</td><td style="padding:7px 10px;border-bottom:1px solid var(--border);color:var(--text);font-size:12px">${k==='ER'?'<em style="color:var(--text-hint)">fin de registro</em>':eh(va)}</td>`;tb.appendChild(tr);});
 }
-
 function update(){
   const t=TIPOS[tipoActivo],ent=v('entidad'),yr=v('anio'),num=v('numero'),tit=v('titulo'),fec=v('fechaPublicacion'),url=v('url'),art=v('articulo');
-  const tH=bldTitle(tipoActivo,num,tit?eh(tit):'<span class="ref-placeholder">[T\u00edtulo]</span>');
-  let ref=`${ent?eh(ent):'<span class="ref-placeholder">[Entidad emisora]</span>'}. (${yr?eh(yr):'<span class="ref-placeholder">[A\u00f1o]</span>'}). <em>${tH}.</em>`;
+  const tH=bldTitle(tipoActivo,num,tit?eh(tit):'<span class="ref-placeholder">[Título]</span>');
+  let ref=`${ent?eh(ent):'<span class="ref-placeholder">[Entidad emisora]</span>'}. (${yr?eh(yr):'<span class="ref-placeholder">[Año]</span>'}). <em>${tH}.</em>`;
   if(fec)ref+=` Diario Oficial El Peruano del ${eh(fec)}.`;
   if(url)ref+=` <span class="url">${eh(url)}</span>`;
   $('refCompleta').innerHTML=ref;
-  const e2=ent||'[Entidad]',y2=yr||'[A\u00f1o]',nRef=t.tieneNumero&&num?`${t.label} ${num}`:t.label,aRef=art?`, ${art}`:`, art\u00edculo X`;
-  $('citaNarrativa').textContent=`La ${nRef} establece que "\u2026" (${e2}, ${y2}${aRef}).`;
-  $('citaParentetica').textContent=`"\u2026" (${e2}, ${y2}, ${nRef}${aRef}).`;
+  const e2=ent||'[Entidad]',y2=yr||'[Año]',nRef=t.tieneNumero&&num?`${t.label} ${num}`:t.label,aRef=art?`, ${art}`:`, artículo X`;
+  $('citaNarrativa').textContent=`La ${nRef} establece que "…" (${e2}, ${y2}${aRef}).`;
+  $('citaParentetica').textContent=`"…" (${e2}, ${y2}, ${nRef}${aRef}).`;
   const L=bldRIS();$('risPreview').innerHTML=renderRISH(L);renderRISTbl(L);
 }
-
 ['entidad','anio','numero','titulo','fechaPublicacion','url','articulo'].forEach(id=>{const el=$(id);if(el)el.addEventListener('input',update);});
-
 $('btnDownloadRIS').addEventListener('click',()=>{
   const c=renderRIST(bldRIS()),b=new Blob(['\uFEFF'+c],{type:'application/x-research-info-systems;charset=utf-8'});
   const fn=(v('titulo')||'norma_legal').substring(0,50).replace(/\s+/g,'_').toLowerCase()+'.ris';
   const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fn;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);
 });
 $('btnCopyAPA').addEventListener('click',()=>{
-  const tF=bldTitle(tipoActivo,v('numero'),v('titulo')||'[T\u00edtulo]');
-  let p=`${v('entidad')||'[Entidad]'}. (${v('anio')||'[A\u00f1o]'}). ${tF}.`;
+  const tF=bldTitle(tipoActivo,v('numero'),v('titulo')||'[Título]');
+  let p=`${v('entidad')||'[Entidad]'}. (${v('anio')||'[Año]'}). ${tF}.`;
   if(v('fechaPublicacion'))p+=` Diario Oficial El Peruano del ${v('fechaPublicacion')}.`;
   if(v('url'))p+=` ${v('url')}`;
   navigator.clipboard.writeText(p).then(()=>showToast('toastAPA'));
@@ -532,16 +829,21 @@ $('btnCopyAPA').addEventListener('click',()=>{
 $('btnCopyRIS').addEventListener('click',()=>navigator.clipboard.writeText(renderRIST(bldRIS())).then(()=>showToast('toastRIS')));
 function showToast(id){const e=$(id);e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200);}
 
+/* ─── NORMAS FRECUENTES: ACORDEÓN (Pestaña 2) ─── */
 function cargar(norma,tipo){
-  tipoActivo=tipo;document.querySelectorAll('.tipo-btn').forEach(b=>b.classList.remove('active'));
+  tipoActivo=tipo;
+  document.querySelectorAll('.tipo-btn').forEach(b=>b.classList.remove('active'));
   const b=document.querySelector(`.tipo-btn[data-tipo="${tipo}"]`);if(b)b.classList.add('active');
-  applyPH(tipo);$('entidad').value=norma.entidad;$('anio').value=norma.anio;
+  applyPH(tipo);
+  $('entidad').value=norma.entidad;$('anio').value=norma.anio;
   if(TIPOS[tipo].tieneNumero)$('numero').value=norma.numero||'';
   $('titulo').value=norma.titulo;$('fechaPublicacion').value=norma.fecha||'';$('url').value=norma.url||'';
-  update();document.querySelectorAll('.main-tab').forEach(b=>b.classList.remove('active'));
+  update();
+  document.querySelectorAll('.main-tab').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelector('.main-tab[data-panel="generador"]').classList.add('active');
-  $('panel-generador').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});
+  $('panel-generador').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function buildAccordion(){
@@ -549,14 +851,158 @@ function buildAccordion(){
   NORMAS_FRECUENTES.forEach((sec,si)=>{
     if(sec.grupo!==lg){lg=sec.grupo;const lbl=document.createElement('p');lbl.className='nf-grupo-label';lbl.textContent=sec.grupo;c.appendChild(lbl);}
     const div=document.createElement('div');div.className='nf-section';
-    div.innerHTML=`<div class="nf-section-header"><div class="nf-section-left"><span class="nf-section-icon">${sec.icono}</span><div><div class="nf-section-title">${sec.seccion}</div><div class="nf-section-count">${sec.normas.length} normas</div></div></div><span class="nf-chevron">\u2304</span></div><div class="nf-list">${sec.normas.map((n,ni)=>`<div class="nf-item"><div class="nf-item-num">${ni+1}</div><div class="nf-item-body"><div class="nf-item-ref">${eh(n.entidad)}. (${eh(n.anio)}). <em>${eh(TIPOS[sec.tipo].tieneNumero?TIPOS[sec.tipo].label+' '+n.numero+'. '+n.titulo:n.titulo)}.</em>${n.fecha?' Diario Oficial El Peruano del '+eh(n.fecha)+'.':''}</div><div class="nf-item-tags"><span class="nf-tag nf-tag-area">${eh(n.area||'')}</span><span class="nf-tag nf-tag-year">${eh(n.anio)}</span></div></div><button class="btn-usar" data-si="${si}" data-ni="${ni}">Usar en generador \u2197</button></div>`).join('')}</div>`;
+    div.innerHTML=`<div class="nf-section-header"><div class="nf-section-left"><span class="nf-section-icon">${sec.icono}</span><div><div class="nf-section-title">${sec.seccion}</div><div class="nf-section-count">${sec.normas.length} normas</div></div></div><span class="nf-chevron">∨</span></div><div class="nf-list">${sec.normas.map((n,ni)=>`<div class="nf-item"><div class="nf-item-num">${ni+1}</div><div class="nf-item-body"><div class="nf-item-ref">${eh(n.entidad)}. (${eh(n.anio)}). <em>${eh(TIPOS[sec.tipo].tieneNumero?TIPOS[sec.tipo].label+' '+n.numero+'. '+n.titulo:n.titulo)}.</em>${n.fecha?' Diario Oficial El Peruano del '+eh(n.fecha)+'.':''}</div><div class="nf-item-tags"><span class="nf-tag nf-tag-area">${eh(n.area||'')}</span><span class="nf-tag nf-tag-year">${eh(n.anio)}</span></div></div><button class="btn-usar" data-si="${si}" data-ni="${ni}">Usar en generador ↗</button></div>`).join('')}</div>`;
     c.appendChild(div);
     div.querySelector('.nf-section-header').addEventListener('click',()=>div.classList.toggle('open'));
     div.querySelectorAll('.btn-usar').forEach(b=>b.addEventListener('click',e=>{const s=NORMAS_FRECUENTES[e.target.dataset.si];cargar(s.normas[e.target.dataset.ni],s.tipo);}));
   });
 }
 
-applyPH(tipoActivo);update();buildAccordion();
+/* ─── TEMAS: ACORDEÓN + BUSCADOR (Pestaña 3) ─── */
+function descargarRISTema(norma){
+  const L=bldRIS(norma.tipo,norma);
+  const c=renderRIST(L);
+  const b=new Blob(['\uFEFF'+c],{type:'application/x-research-info-systems;charset=utf-8'});
+  const fn=(norma.codigo||norma.titulo||'norma').substring(0,40).replace(/[\s\/\\:.]+/g,'_').toLowerCase()+'.ris';
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fn;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);
+}
+
+function cargarTema(norma){
+  const t=TIPOS[norma.tipo];
+  cargar({entidad:norma.entidad,anio:norma.anio,numero:norma.numero||'',titulo:norma.titulo,fecha:norma.fecha||'',url:norma.url||''},norma.tipo);
+}
+
+function buildTemasAccordion(){
+  const c=$('temasAccordion');
+  TEMAS.forEach((tema,ti)=>{
+    const div=document.createElement('div');
+    div.className='tema-section';
+    div.dataset.temaId=tema.id;
+    const normasHTML=tema.normas.map((n,ni)=>`
+      <div class="tema-item" data-norm-idx="${ni}" data-tema-idx="${ti}">
+        <div class="tema-item-num">${ni+1}</div>
+        <div class="tema-item-body">
+          <div class="tema-item-codigo">${eh(n.codigo)}</div>
+          <div class="tema-item-titulo">${eh(n.titulo)}</div>
+          <div class="tema-item-tags">
+            ${n.tags.map(t=>`<span class="nf-tag nf-tag-area">${eh(t)}</span>`).join('')}
+            <span class="nf-tag tema-tag-tipo">${eh(TIPOS[n.tipo]?.label||n.tipo)}</span>
+            <span class="nf-tag nf-tag-year">${eh(n.anio)}</span>
+          </div>
+        </div>
+        <div class="tema-item-actions">
+          <button class="btn-ris-tema" data-ti="${ti}" data-ni="${ni}" title="Descargar .ris">⬇ .ris</button>
+          <button class="btn-gen-tema" data-ti="${ti}" data-ni="${ni}" title="Cargar en el generador">Usar ↗</button>
+        </div>
+      </div>`).join('');
+    div.innerHTML=`
+      <div class="tema-header">
+        <div class="tema-header-left">
+          <span class="tema-icono">${tema.icono}</span>
+          <div>
+            <div class="tema-titulo">${eh(tema.titulo)}</div>
+            <div class="tema-subtitulo">${eh(tema.subtitulo)}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="tema-badge">${tema.normas.length} normas</span>
+          <span class="tema-chevron">∨</span>
+        </div>
+      </div>
+      <div class="tema-list">${normasHTML}</div>`;
+    c.appendChild(div);
+    div.querySelector('.tema-header').addEventListener('click',()=>div.classList.toggle('open'));
+    div.querySelectorAll('.btn-ris-tema').forEach(btn=>btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      const n=TEMAS[+e.target.dataset.ti].normas[+e.target.dataset.ni];
+      descargarRISTema(n);
+    }));
+    div.querySelectorAll('.btn-gen-tema').forEach(btn=>btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      const n=TEMAS[+e.target.dataset.ti].normas[+e.target.dataset.ni];
+      cargarTema(n);
+    }));
+  });
+}
+
+/* ─── BUSCADOR DE TEMAS ─── */
+function buildSearchIndex(){
+  const idx=[];
+  TEMAS.forEach((tema,ti)=>{
+    tema.normas.forEach((n,ni)=>{
+      idx.push({
+        tema:tema.titulo,temaId:tema.id,ti,ni,
+        texto:[n.codigo,n.titulo,n.entidad,...(n.tags||[]),TIPOS[n.tipo]?.label||''].join(' ').toLowerCase()
+      });
+    });
+  });
+  return idx;
+}
+const SEARCH_IDX=buildSearchIndex();
+
+const buscador=$('buscadorTemas');
+const resultados=$('searchResultados');
+
+buscador.addEventListener('input',()=>{
+  const q=buscador.value.trim().toLowerCase();
+  if(q.length<2){resultados.classList.remove('open');resultados.innerHTML='';filtrarTemas('');return;}
+  filtrarTemas(q);
+  const hits=SEARCH_IDX.filter(r=>r.texto.includes(q)).slice(0,12);
+  if(hits.length===0){
+    resultados.innerHTML='<div class="search-empty">Sin resultados para "'+eh(q)+'"</div>';
+    resultados.classList.add('open');return;
+  }
+  resultados.innerHTML=hits.map((h,i)=>{
+    const n=TEMAS[h.ti].normas[h.ni];
+    return`<div class="search-item" data-ti="${h.ti}" data-ni="${h.ni}">
+      <span class="search-item-icon">${TEMAS[h.ti].icono}</span>
+      <div>
+        <div class="search-item-tema">${eh(h.tema)}</div>
+        <div class="search-item-norma"><strong>${eh(n.codigo)}</strong> — ${eh(n.titulo)}</div>
+      </div>
+    </div>`;
+  }).join('');
+  resultados.classList.add('open');
+  resultados.querySelectorAll('.search-item').forEach(item=>{
+    item.addEventListener('click',()=>{
+      const ti=+item.dataset.ti,ni=+item.dataset.ni;
+      // Scroll to tema & open
+      const tema=TEMAS[ti];
+      filtrarTemas('');
+      buscador.value='';resultados.classList.remove('open');
+      const sections=document.querySelectorAll('.tema-section');
+      sections.forEach(s=>s.classList.remove('open'));
+      const target=document.querySelector(`.tema-section[data-tema-id="${tema.id}"]`);
+      if(target){target.classList.add('open');setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),50);}
+    });
+  });
+});
+
+function filtrarTemas(q){
+  document.querySelectorAll('.tema-section').forEach(s=>{
+    if(!q){s.classList.remove('hidden');return;}
+    const id=s.dataset.temaId;
+    const tema=TEMAS.find(t=>t.id===id);
+    if(!tema){s.classList.add('hidden');return;}
+    const match=
+      tema.titulo.toLowerCase().includes(q)||
+      tema.subtitulo.toLowerCase().includes(q)||
+      tema.normas.some(n=>[n.codigo,n.titulo,...(n.tags||[])].join(' ').toLowerCase().includes(q));
+    s.classList.toggle('hidden',!match);
+    if(match)s.classList.add('open');
+  });
+}
+
+document.addEventListener('click',e=>{
+  if(!resultados.contains(e.target)&&e.target!==buscador)resultados.classList.remove('open');
+});
+buscador.addEventListener('keydown',e=>{if(e.key==='Escape'){resultados.classList.remove('open');filtrarTemas('');}});
+
+/* ─── INIT ─── */
+applyPH(tipoActivo);
+update();
+buildAccordion();
+buildTemasAccordion();
 </script>
 </body>
 </html>
